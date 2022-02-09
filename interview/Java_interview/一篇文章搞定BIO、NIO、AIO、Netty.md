@@ -171,7 +171,7 @@ Netty是由NIO演进而来，使用过NIO编程的用户就知道NIO编程非常
 
 [注意，如果懂IO的普通文件读写操作可以直接点击此处跳过，直接看网络操作IO编程，那个才是重点，点击即会跳转](#Mark)
 
-前面讲了那么多废话，现在我们开始进入主题，后面很长，从开始的文件操作到后面的**网络IO操作**都会有例子： ![在这里插入图片描述](https://gitee.com/markgitee/images/raw/master/uPic/e2d87bcad4c64beabbd50bbc1e911f71~tplv-k3u1fbpfcp-watermark-20220210020844133.image)
+前面讲了那么多废话，现在我们开始进入主题，后面很长，从开始的文件操作到后面的**网络IO操作**都会有例子： ![在这里插入图片描述](https://cdn.jsdelivr.net/gh/Mark-Jackson-Github/images@master/uPic/e2d87bcad4c64beabbd50bbc1e911f71~tplv-k3u1fbpfcp-watermark.image)
 
  [注意，如果懂IO的普通文件读写操作可以直接点击此处跳过，直接看网络操作IO编程，那个才是重点，点击即会跳转](#Mark)
 
@@ -225,7 +225,7 @@ public class TestFileReader {
 
 - **运行结果：**
 
-![在这里插入图片描述](https://gitee.com/markgitee/images/raw/master/uPic/4b781e0fdce241f3b8223c8b1a62e2d5~tplv-k3u1fbpfcp-watermark-20220210020906474.image)·![在这里插入图片描述](https://gitee.com/markgitee/images/raw/master/uPic/c5b99414996c4809884ea90482ace234~tplv-k3u1fbpfcp-watermark-20220210020856596.image) 
+![在这里插入图片描述](https://cdn.jsdelivr.net/gh/Mark-Jackson-Github/images@master/uPic/4b781e0fdce241f3b8223c8b1a62e2d5~tplv-k3u1fbpfcp-watermark.image)·![在这里插入图片描述](https://cdn.jsdelivr.net/gh/Mark-Jackson-Github/images@master/uPic/c5b99414996c4809884ea90482ace234~tplv-k3u1fbpfcp-watermark.image) 
 
 ###### 1.2 按字符流的·处理流方式读取
 
