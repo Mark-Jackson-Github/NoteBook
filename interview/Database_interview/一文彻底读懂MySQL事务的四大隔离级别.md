@@ -1,6 +1,6 @@
 # 一文彻底读懂MySQL事务的四大隔离级别
 
-![img](/Users/mark/typora_workspace/NoteBook/images/171498a008c91b4c~tplv-t2oaga2asx-watermark.image)
+![img](https://cdn.jsdelivr.net/gh/Mark-Jackson-Github/images@master/uPic/171498a008c91b4c~tplv-t2oaga2asx-watermark.image)
 
 
 
@@ -16,7 +16,7 @@
 
 
 
-![img](/Users/mark/typora_workspace/NoteBook/images/1712b5213446a402~tplv-t2oaga2asx-watermark.image)
+![img](https://cdn.jsdelivr.net/gh/Mark-Jackson-Github/images@master/uPic/1712b5213446a402~tplv-t2oaga2asx-watermark.image)
 
 
 
@@ -46,7 +46,7 @@ CREATE TABLE `account` (
 
 
 
-![img](/Users/mark/typora_workspace/NoteBook/images/171381960fd0f119~tplv-t2oaga2asx-watermark.image)
+![img](https://cdn.jsdelivr.net/gh/Mark-Jackson-Github/images@master/uPic/171381960fd0f119~tplv-t2oaga2asx-watermark.image)
 
 
 
@@ -60,7 +60,7 @@ CREATE TABLE `account` (
 
 
 
-![img](/Users/mark/typora_workspace/NoteBook/images/1713824c77723cd4~tplv-t2oaga2asx-watermark.image)
+![img](https://cdn.jsdelivr.net/gh/Mark-Jackson-Github/images@master/uPic/1713824c77723cd4~tplv-t2oaga2asx-watermark.image)
 
 
 
@@ -76,7 +76,7 @@ CREATE TABLE `account` (
 
 
 
-![img](/Users/mark/typora_workspace/NoteBook/images/1713829b86401900~tplv-t2oaga2asx-watermark.image)
+![img](https://cdn.jsdelivr.net/gh/Mark-Jackson-Github/images@master/uPic/1713829b86401900~tplv-t2oaga2asx-watermark.image)
 
 
 
@@ -92,7 +92,7 @@ CREATE TABLE `account` (
 
 
 
-![img](/Users/mark/typora_workspace/NoteBook/images/171382b2bdd28029~tplv-t2oaga2asx-watermark.image)
+![img](https://cdn.jsdelivr.net/gh/Mark-Jackson-Github/images@master/uPic/171382b2bdd28029~tplv-t2oaga2asx-watermark.image)
 
 
 
@@ -113,7 +113,7 @@ CREATE TABLE `account` (
 
 
 
-![img](/Users/mark/typora_workspace/NoteBook/images/17148fd0f161aea8~tplv-t2oaga2asx-watermark.image)
+![img](https://cdn.jsdelivr.net/gh/Mark-Jackson-Github/images@master/uPic/17148fd0f161aea8~tplv-t2oaga2asx-watermark.image)
 
 
 
@@ -130,7 +130,7 @@ select * from account where id =1;
 
 
 
-![img](/Users/mark/typora_workspace/NoteBook/images/17148f9415ffc166~tplv-t2oaga2asx-watermark.image)
+![img](https://cdn.jsdelivr.net/gh/Mark-Jackson-Github/images@master/uPic/17148f9415ffc166~tplv-t2oaga2asx-watermark.image)
 
 这时候，另开一个窗口打开mysql，也把当前事务隔离级别设置为read uncommitted，开启事务B，执行更新操作
 
@@ -147,7 +147,7 @@ update account set balance=balance+20 where id =1;
 
 
 
-![img](/Users/mark/typora_workspace/NoteBook/images/17148faf1e5d5f48~tplv-t2oaga2asx-watermark.image)
+![img](https://cdn.jsdelivr.net/gh/Mark-Jackson-Github/images@master/uPic/17148faf1e5d5f48~tplv-t2oaga2asx-watermark.image)
 
 
 
@@ -159,7 +159,7 @@ update account set balance=balance+20 where id =1;
 
 
 
-![img](/Users/mark/typora_workspace/NoteBook/images/17148c908b12084b~tplv-t2oaga2asx-watermark.image)
+![img](https://cdn.jsdelivr.net/gh/Mark-Jackson-Github/images@master/uPic/17148c908b12084b~tplv-t2oaga2asx-watermark.image)
 
 
 
@@ -185,7 +185,7 @@ update account set balance=balance+20 where id =1;
 
 
 
-![img](/Users/mark/typora_workspace/NoteBook/images/1713d69e118832d2~tplv-t2oaga2asx-watermark.image)
+![img](https://cdn.jsdelivr.net/gh/Mark-Jackson-Github/images@master/uPic/1713d69e118832d2~tplv-t2oaga2asx-watermark.image)
 
 
 
@@ -200,7 +200,7 @@ commit;
 
 
 
-![img](/Users/mark/typora_workspace/NoteBook/images/1713d68ad5a2fd47~tplv-t2oaga2asx-watermark.image)
+![img](https://cdn.jsdelivr.net/gh/Mark-Jackson-Github/images@master/uPic/1713d68ad5a2fd47~tplv-t2oaga2asx-watermark.image)
 
 
 
@@ -216,7 +216,7 @@ commit;
 
 
 
-![img](/Users/mark/typora_workspace/NoteBook/images/17144b324064255a~tplv-t2oaga2asx-watermark.image)
+![img](https://cdn.jsdelivr.net/gh/Mark-Jackson-Github/images@master/uPic/17144b324064255a~tplv-t2oaga2asx-watermark.image)
 
 
 
@@ -228,11 +228,11 @@ commit;
 
 
 
-![img](/Users/mark/typora_workspace/NoteBook/images/1714911d7b42c350~tplv-t2oaga2asx-watermark.image)
+![img](https://cdn.jsdelivr.net/gh/Mark-Jackson-Github/images@master/uPic/1714911d7b42c350~tplv-t2oaga2asx-watermark.image)
 
 由图可得，步骤2和步骤6查询结果集没有变化，看起来RR级别是已经解决幻读问题了~ 但是呢，**RR级别还是存在这种现象**：
 
-![img](/Users/mark/typora_workspace/NoteBook/images/17142571375bd709~tplv-t2oaga2asx-watermark.image)
+![img](https://cdn.jsdelivr.net/gh/Mark-Jackson-Github/images@master/uPic/17142571375bd709~tplv-t2oaga2asx-watermark.image)
 
 
 
@@ -268,7 +268,7 @@ insert into account(id,name,balance) value(6,'Li',100);
 
 
 
-![img](/Users/mark/typora_workspace/NoteBook/images/1714282f3cb7f7fa~tplv-t2oaga2asx-watermark.image)
+![img](https://cdn.jsdelivr.net/gh/Mark-Jackson-Github/images@master/uPic/1714282f3cb7f7fa~tplv-t2oaga2asx-watermark.image)
 
 
 
@@ -317,7 +317,7 @@ MVCC，中文叫**多版本并发控制**，它是通过读取历史版本的数
 
 
 
-![img](/Users/mark/typora_workspace/NoteBook/images/1714794c14a7e14f~tplv-t2oaga2asx-watermark.image)
+![img](https://cdn.jsdelivr.net/gh/Mark-Jackson-Github/images@master/uPic/1714794c14a7e14f~tplv-t2oaga2asx-watermark.image)
 
 
 
@@ -349,7 +349,7 @@ mysql> select * from account ;
 
 
 
-![img](/Users/mark/typora_workspace/NoteBook/images/171478d1a4a873d6~tplv-t2oaga2asx-watermark.image)
+![img](https://cdn.jsdelivr.net/gh/Mark-Jackson-Github/images@master/uPic/171478d1a4a873d6~tplv-t2oaga2asx-watermark.image)
 
 
 
@@ -396,7 +396,7 @@ select * from  account where id>2 for update;
 
 我觉得理解一个新的知识点，最好的方法就是**居于目前存在的问题/现象，去分析它**的来龙去脉~ RC的实现也跟MVCC有关，RC是存在重复读并发问题的，所以我们来分析一波RC吧，先看一下执行流程
 
-![img](/Users/mark/typora_workspace/NoteBook/images/17148cab92213e82~tplv-t2oaga2asx-watermark.image)
+![img](https://cdn.jsdelivr.net/gh/Mark-Jackson-Github/images@master/uPic/17148cab92213e82~tplv-t2oaga2asx-watermark.image)
 
 假设现在系统里有A，B两个事务在执行，事务ID分别为100、200，并且假设存在的老数据，插入事务ID是50哈~
 
@@ -421,7 +421,7 @@ update account set balance =balance+20 where id =1;
 
 
 
-![img](/Users/mark/typora_workspace/NoteBook/images/17149227dbd59f46~tplv-t2oaga2asx-watermark.image)
+![img](https://cdn.jsdelivr.net/gh/Mark-Jackson-Github/images@master/uPic/17149227dbd59f46~tplv-t2oaga2asx-watermark.image)
 
 **回到事务A，执行查询2的操作**
 
@@ -451,7 +451,7 @@ commit
 
 
 
-![img](/Users/mark/typora_workspace/NoteBook/images/1714924077c2775d~tplv-t2oaga2asx-watermark.image)
+![img](https://cdn.jsdelivr.net/gh/Mark-Jackson-Github/images@master/uPic/1714924077c2775d~tplv-t2oaga2asx-watermark.image)
 
 
 
@@ -480,7 +480,7 @@ begin ;
 
 
 
-![img](/Users/mark/typora_workspace/NoteBook/images/171488edb21fe523~tplv-t2oaga2asx-watermark.image)
+![img](https://cdn.jsdelivr.net/gh/Mark-Jackson-Github/images@master/uPic/171488edb21fe523~tplv-t2oaga2asx-watermark.image)
 
 假设现在系统里有A，B，C两个事务在执行，事务ID分别为100、200，300，存量数据插入的事务ID是50~
 
@@ -498,7 +498,7 @@ begin ; //开个事务，占坑先
 
 **这时候，account表中，id =1记录的undo日志链如下：**
 
-![img](/Users/mark/typora_workspace/NoteBook/images/1714881ff86628eb~tplv-t2oaga2asx-watermark.image)
+![img](https://cdn.jsdelivr.net/gh/Mark-Jackson-Github/images@master/uPic/1714881ff86628eb~tplv-t2oaga2asx-watermark.image)
 
 
 
@@ -536,7 +536,7 @@ UPDATE account SET balance = 2000  WHERE id = 1;
 
 
 
-![img](/Users/mark/typora_workspace/NoteBook/images/17148a0b1e007c1f~tplv-t2oaga2asx-watermark.image)
+![img](https://cdn.jsdelivr.net/gh/Mark-Jackson-Github/images@master/uPic/17148a0b1e007c1f~tplv-t2oaga2asx-watermark.image)
 
 
 
@@ -614,7 +614,7 @@ Record lock, heap no 2 PHYSICAL RECORD: n_fields 3; compact format; info bits 0
 
 
 
-![img](/Users/mark/typora_workspace/NoteBook/images/171496a6382f56e7~tplv-t2oaga2asx-watermark.image)
+![img](https://cdn.jsdelivr.net/gh/Mark-Jackson-Github/images@master/uPic/171496a6382f56e7~tplv-t2oaga2asx-watermark.image)
 
 
 
@@ -623,7 +623,7 @@ Record lock, heap no 2 PHYSICAL RECORD: n_fields 3; compact format; info bits 0
 
 
 
-![img](/Users/mark/typora_workspace/NoteBook/images/171497ae540bdebf~tplv-t2oaga2asx-watermark.image)
+![img](https://cdn.jsdelivr.net/gh/Mark-Jackson-Github/images@master/uPic/171497ae540bdebf~tplv-t2oaga2asx-watermark.image)
 
 
 
@@ -639,14 +639,8 @@ Record lock, heap no 2 PHYSICAL RECORD: n_fields 3; compact format; info bits 0
 
 - 再开启事务B，插入id=5的一条数据。
 
-    ![img](/Users/mark/typora_workspace/NoteBook/images/17149563ecc072ba~tplv-t2oaga2asx-watermark.image)
+    ![img](https://cdn.jsdelivr.net/gh/Mark-Jackson-Github/images@master/uPic/17149563ecc072ba~tplv-t2oaga2asx-watermark.image)
 
     可以发现，事务B执行插入操作时，阻塞了~因为事务A在执行select ... lock in share mode的时候，不仅在 id = 3,4 这2条记录上加了锁，而且在id > 2 这个范围上也加了间隙锁。
 
 因此，我们可以发现，RR隔离级别下，加锁的select, update, delete等语句，会使用间隙锁+ 临键锁，锁住索引记录之间的范围，避免范围间插入记录，以避免产生幻影行记录。
-
-
-作者：捡田螺的小男孩
-链接：https://juejin.cn/post/6844904115353436174
-来源：稀土掘金
-著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。

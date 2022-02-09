@@ -2,7 +2,7 @@
 
 ### 一、面试官考点之索引是什么？
 
-![img](/Users/mark/typora_workspace/NoteBook/images/21eed26e34534b51aadf28d5defaed7e~tplv-k3u1fbpfcp-watermark.image)
+![img](https://cdn.jsdelivr.net/gh/Mark-Jackson-Github/images@master/uPic/21eed26e34534b51aadf28d5defaed7e~tplv-k3u1fbpfcp-watermark.image)
 
 - 索引是一种能提高数据库查询效率的数据结构。它可以比作一本字典的目录，可以帮你快速找到对应的记录。
 - 索引一般存储在磁盘的文件中，它是占用物理空间的。
@@ -10,7 +10,7 @@
 
 ### 二、索引有哪些类型类型
 
-![img](/Users/mark/typora_workspace/NoteBook/images/cf6725e1a8cb44b496cca8fa45e15c2f~tplv-k3u1fbpfcp-watermark.image)
+![img](https://cdn.jsdelivr.net/gh/Mark-Jackson-Github/images@master/uPic/cf6725e1a8cb44b496cca8fa45e15c2f~tplv-k3u1fbpfcp-watermark.image)
 
 #### 数据结构维度
 
@@ -55,9 +55,9 @@ select * from employee where age between 18 and 28;
 - 左子节点的值小于当前节点的值，当前节点值小于右子节点值
 - 顶端的节点称为跟节点，没有子节点的节点值称为叶子节点。
 
-我们脑海中，很容易就浮现出这种二叉树结构图： ![img](/Users/mark/typora_workspace/NoteBook/images/8d4c349a7bda4b3db1791f9cff9c093e~tplv-k3u1fbpfcp-watermark.image)
+我们脑海中，很容易就浮现出这种二叉树结构图： ![img](https://cdn.jsdelivr.net/gh/Mark-Jackson-Github/images@master/uPic/8d4c349a7bda4b3db1791f9cff9c093e~tplv-k3u1fbpfcp-watermark.image)
 
-但是呢，有些特殊二叉树，它可能这样的哦： ![img](/Users/mark/typora_workspace/NoteBook/images/97b71a48d43545a0bc20a55adf2be207~tplv-k3u1fbpfcp-watermark.image)
+但是呢，有些特殊二叉树，它可能这样的哦： ![img](https://cdn.jsdelivr.net/gh/Mark-Jackson-Github/images@master/uPic/97b71a48d43545a0bc20a55adf2be207~tplv-k3u1fbpfcp-watermark.image)
 
 如果二叉树特殊化为一个链表，相当于全表扫描。那么还要索引干嘛呀？因此，一般二叉树不适合作为索引结构。
 
@@ -65,7 +65,7 @@ select * from employee where age between 18 and 28;
 
 平衡二叉树特点：它也是一颗二叉查找树，任何节点的两个子树高度最大差为1。所以就不会出现特殊化一个链表的情况啦。
 
-![img](/Users/mark/typora_workspace/NoteBook/images/74afa9b54e7f4c0996ff83e66016c09a~tplv-k3u1fbpfcp-watermark.image)
+![img](https://cdn.jsdelivr.net/gh/Mark-Jackson-Github/images@master/uPic/74afa9b54e7f4c0996ff83e66016c09a~tplv-k3u1fbpfcp-watermark.image)
 
 但是呢：
 
@@ -76,7 +76,7 @@ select * from employee where age between 18 and 28;
 
 数据量大的话，平衡二叉树的高度会很高，会增加IO嘛。那为什么不选择同样数据量，**高度更矮的B树**呢？
 
-![img](/Users/mark/typora_workspace/NoteBook/images/acc8f2e2cfb54092b4fb131e500334a3~tplv-k3u1fbpfcp-watermark.image)
+![img](https://cdn.jsdelivr.net/gh/Mark-Jackson-Github/images@master/uPic/acc8f2e2cfb54092b4fb131e500334a3~tplv-k3u1fbpfcp-watermark.image)
 
 B树相对于平衡二叉树，就可以存储更多的数据，高度更低。但是最后为甚选择B+树呢？因为B+树是B树的升级版：
 
@@ -119,11 +119,11 @@ select * from Temployee where age=32;
 
 - 先画出`idx_age`索引的索引结构图，大概如下：
 
-![img](/Users/mark/typora_workspace/NoteBook/images/f88457b43e354ca18795fa0033ad075f~tplv-k3u1fbpfcp-watermark.image)
+![img](https://cdn.jsdelivr.net/gh/Mark-Jackson-Github/images@master/uPic/f88457b43e354ca18795fa0033ad075f~tplv-k3u1fbpfcp-watermark.image)
 
 - 再画出id主键索引，我们先画出聚族索引结构图，如下：
 
-![img](/Users/mark/typora_workspace/NoteBook/images/963a8dacb39345008c93b1d0ea079eec~tplv-k3u1fbpfcp-watermark.image)
+![img](https://cdn.jsdelivr.net/gh/Mark-Jackson-Github/images@master/uPic/963a8dacb39345008c93b1d0ea079eec~tplv-k3u1fbpfcp-watermark.image)
 
 因此，这条 SQL 查询语句执行大概流程就是酱紫：
 
@@ -143,7 +143,7 @@ select * from Temployee where age=32;
 
 **解析：** 这个问题，主要考察候选人的覆盖索引知识点。回到`idx_age`索引树，你可以发现查询选项id和age都在叶子节点上了。因此，可以直接提供查询结果啦，根本就不需要再回表了~
 
-![img](/Users/mark/typora_workspace/NoteBook/images/629b6cfd08614adcbb20154707c0c8e0~tplv-k3u1fbpfcp-watermark.image)
+![img](https://cdn.jsdelivr.net/gh/Mark-Jackson-Github/images@master/uPic/629b6cfd08614adcbb20154707c0c8e0~tplv-k3u1fbpfcp-watermark.image)
 
 > 覆盖索引：在查询的数据列里面，不需要回表去查，直接从索引列就能取到想要的结果。换句话说，你SQL用到的索引列数据，覆盖了查询结果的列，就算上覆盖索引了。
 
@@ -160,7 +160,7 @@ select * from employee where name like '%杰伦%';
 
 **解析：** 这里考察的知识点就是，like是否会导致不走索引，看先该SQL的explain执行计划吧。其实like 模糊搜索，会导致不走索引的，如下：
 
-![img](/Users/mark/typora_workspace/NoteBook/images/3b01bb44ff5744729e55939cc88bd424~tplv-k3u1fbpfcp-watermark.image)
+![img](https://cdn.jsdelivr.net/gh/Mark-Jackson-Github/images@master/uPic/3b01bb44ff5744729e55939cc88bd424~tplv-k3u1fbpfcp-watermark.image)
 
 因此，这条SQL最后就全表扫描啦~日常开发中，这几种骚操作都可能会导致索引失效，如下：
 
@@ -186,11 +186,11 @@ select * from employee where name like '小%' order by age desc;
 
 **解析：** 这里考察联合索引的最左前缀原则以及like是否中索引的知识点。组合索引树示意图大概如下：
 
-![img](/Users/mark/typora_workspace/NoteBook/images/29df075df94549b693a6a0ee06730666~tplv-k3u1fbpfcp-watermark.image)
+![img](https://cdn.jsdelivr.net/gh/Mark-Jackson-Github/images@master/uPic/29df075df94549b693a6a0ee06730666~tplv-k3u1fbpfcp-watermark.image)
 
 联合索引项是先按姓名name从小到大排序，如果名字name相同，则按年龄age从小到大排序。面试官要求查所有名字第一个字是“小”的人，SQL的like '小%'是可以用上`idx_name_age`联合索引的。
 
-![img](/Users/mark/typora_workspace/NoteBook/images/58b49f88f75f48be873deb395431c2fa~tplv-k3u1fbpfcp-watermark.image)
+![img](https://cdn.jsdelivr.net/gh/Mark-Jackson-Github/images@master/uPic/58b49f88f75f48be873deb395431c2fa~tplv-k3u1fbpfcp-watermark.image)
 
 该查询会沿着idx_name_age索引树，找到第一个字是小的索引值，因此依次找到`小军、小伦、小燕、`，分别拿到Id=`600、100、700`，然后回三次表，去找对应的记录。 这里面的最左前缀`小`，就是字符串索引的最左M个字符。实际上，
 
@@ -208,13 +208,13 @@ select * from employee where name like '小%' and age=28 and sex='0';
 
 **解析：** 这里考察索引下推的知识点，如果是**Mysql5.6之前**，在idx_name_age索引树，找出所有名字第一个字是“小”的人，拿到它们的主键id，然后回表找出数据行，再去对比年龄和性别等其他字段。如图：
 
-![img](/Users/mark/typora_workspace/NoteBook/images/c5729b1a84fd4ee9b872717903ca6f75~tplv-k3u1fbpfcp-watermark.image)
+![img](https://cdn.jsdelivr.net/gh/Mark-Jackson-Github/images@master/uPic/c5729b1a84fd4ee9b872717903ca6f75~tplv-k3u1fbpfcp-watermark.image)
 
 有些朋友可能觉得奇怪，（name,age)不是联合索引嘛？为什么选出包含“小”字后，不再顺便看下年龄age再回表呢，不是更高效嘛？所以呀，MySQL 5.6 就引入了**索引下推优化**，可以在索引遍历过程中，对索引中包含的字段先做判断，直接过滤掉不满足条件的记录，减少回表次数。
 
 因此，MySQL5.6版本之后，选出包含“小”字后，顺表过滤age=28，,所以就只需一次回表。
 
-![img](/Users/mark/typora_workspace/NoteBook/images/168aecb4709d4c30bc93c489ad76d712~tplv-k3u1fbpfcp-watermark.image)
+![img](https://cdn.jsdelivr.net/gh/Mark-Jackson-Github/images@master/uPic/168aecb4709d4c30bc93c489ad76d712~tplv-k3u1fbpfcp-watermark.image)
 
 ### 九、 面试官考点之大表添加索引
 
@@ -241,9 +241,3 @@ select * from A where type ='1' and status ='s' order by create_time desc;
 - 是给type加单索引
 - 还是（type，status，create_time）联合索引
 - 还是（type，create_time）联合索引呢？
-
-
-作者：捡田螺的小男孩
-链接：https://juejin.cn/post/6923788859712995336
-来源：稀土掘金
-著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。

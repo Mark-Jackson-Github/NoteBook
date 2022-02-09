@@ -154,11 +154,11 @@ select userId，name from user where userId like '123%';
 
 - 把%放前面，并不走索引，如下：
 
-    ![img](/Users/mark/typora_workspace/NoteBook/images/170f7f2739040e5b~tplv-t2oaga2asx-watermark.image)
+    ![img](https://cdn.jsdelivr.net/gh/Mark-Jackson-Github/images@master/uPic/170f7f2739040e5b~tplv-t2oaga2asx-watermark.image)
 
 - 把% 放关键字后面，还是会走索引的。如下：
 
-    ![img](/Users/mark/typora_workspace/NoteBook/images/170f7f224aa3dfed~tplv-t2oaga2asx-watermark.image)
+    ![img](https://cdn.jsdelivr.net/gh/Mark-Jackson-Github/images@master/uPic/170f7f224aa3dfed~tplv-t2oaga2asx-watermark.image)
 
 ### 6、使用where条件限定要查询的数据，避免返回多余的行
 
@@ -208,13 +208,13 @@ explain  select userId,loginTime from loginuser where  loginTime >= Date_ADD(NOW
 
 
 
-![img](/Users/mark/typora_workspace/NoteBook/images/170fd5f19265afa9~tplv-t2oaga2asx-watermark.image)
+![img](https://cdn.jsdelivr.net/gh/Mark-Jackson-Github/images@master/uPic/170fd5f19265afa9~tplv-t2oaga2asx-watermark.image)
 
 
 
 - 如果索引列不加内置函数，索引还是会走的。
 
-    ![img](/Users/mark/typora_workspace/NoteBook/images/170f875955e8b7c0~tplv-t2oaga2asx-watermark.image)
+    ![img](https://cdn.jsdelivr.net/gh/Mark-Jackson-Github/images@master/uPic/170f875955e8b7c0~tplv-t2oaga2asx-watermark.image)
 
 ### 8、应尽量避免在 where 子句中对字段进行表达式操作，这将导致系统放弃使用索引而进行全表扫
 
@@ -236,7 +236,7 @@ select * from user where age =11；
 
 - 虽然age加了索引，但是因为对它进行运算，索引直接迷路了。。。
 
-    ![img](/Users/mark/typora_workspace/NoteBook/images/170f85b4a47dc153~tplv-t2oaga2asx-watermark.image)
+    ![img](https://cdn.jsdelivr.net/gh/Mark-Jackson-Github/images@master/uPic/170f85b4a47dc153~tplv-t2oaga2asx-watermark.image)
 
 ### 9、Inner join 、left join、right join，优先使用Inner join，如果是left join，左边表结果尽量小
 
@@ -289,7 +289,7 @@ select age,name  from user where age >18;
 
 
 
-![img](/Users/mark/typora_workspace/NoteBook/images/170f8d5a32598527~tplv-t2oaga2asx-watermark.image)
+![img](https://cdn.jsdelivr.net/gh/Mark-Jackson-Github/images@master/uPic/170f8d5a32598527~tplv-t2oaga2asx-watermark.image)
 
 
 
@@ -319,7 +319,7 @@ select * from user where age = 10;
 
 
 
-![img](/Users/mark/typora_workspace/NoteBook/images/170fabb3abde4936~tplv-t2oaga2asx-watermark.image)
+![img](https://cdn.jsdelivr.net/gh/Mark-Jackson-Github/images@master/uPic/170fabb3abde4936~tplv-t2oaga2asx-watermark.image)
 
 
 
@@ -335,9 +335,9 @@ select * from user where userid =10;
 
 
 
-![img](/Users/mark/typora_workspace/NoteBook/images/170fda546249a690~tplv-t2oaga2asx-watermark.image)
+![img](https://cdn.jsdelivr.net/gh/Mark-Jackson-Github/images@master/uPic/170fda546249a690~tplv-t2oaga2asx-watermark.image)
 
-![img](/Users/mark/typora_workspace/NoteBook/images/170fabd29ed198a8~tplv-t2oaga2asx-watermark.image)
+![img](https://cdn.jsdelivr.net/gh/Mark-Jackson-Github/images@master/uPic/170fabd29ed198a8~tplv-t2oaga2asx-watermark.image)
 
 理由：
 
@@ -357,7 +357,7 @@ select * from user where address ='深圳' order by age ;
 
 
 
-![img](/Users/mark/typora_workspace/NoteBook/images/170fac5e1650f9b4~tplv-t2oaga2asx-watermark.image)
+![img](https://cdn.jsdelivr.net/gh/Mark-Jackson-Github/images@master/uPic/170fac5e1650f9b4~tplv-t2oaga2asx-watermark.image)
 
 正例：
 
@@ -371,7 +371,7 @@ alter table user add index idx_address_age (address,age)
 
 
 
-![img](/Users/mark/typora_workspace/NoteBook/images/170facab45b2d9a6~tplv-t2oaga2asx-watermark.image)
+![img](https://cdn.jsdelivr.net/gh/Mark-Jackson-Github/images@master/uPic/170facab45b2d9a6~tplv-t2oaga2asx-watermark.image)
 
 
 
@@ -417,7 +417,7 @@ select * from user where userid like '%123%'
 
 
 
-![img](/Users/mark/typora_workspace/NoteBook/images/170fb02be8584b0a~tplv-t2oaga2asx-watermark.image)
+![img](https://cdn.jsdelivr.net/gh/Mark-Jackson-Github/images@master/uPic/170fb02be8584b0a~tplv-t2oaga2asx-watermark.image)
 
 正例：
 
@@ -431,7 +431,7 @@ select id,name from user where userid like '%123%';
 
 
 
-![img](/Users/mark/typora_workspace/NoteBook/images/170fafe4a0d3d5e6~tplv-t2oaga2asx-watermark.image)
+![img](https://cdn.jsdelivr.net/gh/Mark-Jackson-Github/images@master/uPic/170fafe4a0d3d5e6~tplv-t2oaga2asx-watermark.image)
 
 
 
@@ -519,7 +519,7 @@ select * from user where age is not null;
 
 
 
-![img](/Users/mark/typora_workspace/NoteBook/images/170fbaec810f084f~tplv-t2oaga2asx-watermark.image)
+![img](https://cdn.jsdelivr.net/gh/Mark-Jackson-Github/images@master/uPic/170fbaec810f084f~tplv-t2oaga2asx-watermark.image)
 
 正例：
 
@@ -533,7 +533,7 @@ select * from user where age>0;
 
 
 
-![img](/Users/mark/typora_workspace/NoteBook/images/170fbb088234cc77~tplv-t2oaga2asx-watermark.image)
+![img](https://cdn.jsdelivr.net/gh/Mark-Jackson-Github/images@master/uPic/170fbb088234cc77~tplv-t2oaga2asx-watermark.image)
 
 理由：
 
@@ -766,7 +766,7 @@ select * from user where userid =123;
 
 
 
-![img](/Users/mark/typora_workspace/NoteBook/images/170fd45766e57cdc~tplv-t2oaga2asx-watermark.image)
+![img](https://cdn.jsdelivr.net/gh/Mark-Jackson-Github/images@master/uPic/170fd45766e57cdc~tplv-t2oaga2asx-watermark.image)
 
 正例：
 
@@ -779,7 +779,7 @@ select * from user where userid ='123';
 
 
 
-![img](/Users/mark/typora_workspace/NoteBook/images/170fd46de786dce3~tplv-t2oaga2asx-watermark.image)
+![img](https://cdn.jsdelivr.net/gh/Mark-Jackson-Github/images@master/uPic/170fd46de786dce3~tplv-t2oaga2asx-watermark.image)
 
 理由：
 
@@ -798,7 +798,7 @@ explain select * from user where userid =10086 or age =18;
 
 
 
-![img](/Users/mark/typora_workspace/NoteBook/images/170fd29c57512897~tplv-t2oaga2asx-watermark.image)
+![img](https://cdn.jsdelivr.net/gh/Mark-Jackson-Github/images@master/uPic/170fd29c57512897~tplv-t2oaga2asx-watermark.image)
 
 
 
@@ -806,9 +806,3 @@ explain select * from user where userid =10086 or age =18;
 
 - [Mysql优化原则_小表驱动大表IN和EXISTS的合理利用](https://link.juejin.cn/?target=https%3A%2F%2Fsegmentfault.com%2Fa%2F1190000014509559)
 - [sql语句的优化分析](https://link.juejin.cn/?target=https%3A%2F%2Fwww.cnblogs.com%2Fknowledgesea%2Fp%2F3686105.html)
-
-
-作者：捡田螺的小男孩
-链接：https://juejin.cn/post/6844904098999828488
-来源：稀土掘金
-著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。
