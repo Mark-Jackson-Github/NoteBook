@@ -15,7 +15,7 @@
 - Java中I/O是以流为基础进行数据的输入输出的，所有数据被串行化(所谓串行化就是数据要按顺序进行输入输出)写入输出流。简单来说就是java通过io流方式和外部设备进行交互。
 - 在Java类库中，IO部分的内容是很庞大的，因为它涉及的领域很广泛：标准输入输出，文件的操作，**网络上的数据传输流**，字符串流，对象流等等等。
 
-![在这里插入图片描述](https://cdn.jsdelivr.net/gh/Mark-Jackson-Github/images@master/uPic/18f13af1f906411f91ca22a575fe79a9~tplv-k3u1fbpfcp-watermark.image)
+![在这里插入图片描述](https://gitee.com/markgitee/images/raw/master/uPic/18f13af1f906411f91ca22a575fe79a9~tplv-k3u1fbpfcp-watermark-20220210020634815.image)
 
 - 比如程序从服务器上下载图片，就是通过流的方式从网络上以流的方式到程序中，在到硬盘中
 
@@ -56,7 +56,7 @@ Netty是由NIO演进而来，使用过NIO编程的用户就知道NIO编程非常
 
 #### IO流的分类
 
-![在这里插入图片描述](https://cdn.jsdelivr.net/gh/Mark-Jackson-Github/images@master/uPic/7561c1d652894d6195f78e842314cc4a~tplv-k3u1fbpfcp-watermark.image) 
+![在这里插入图片描述](https://gitee.com/markgitee/images/raw/master/uPic/7561c1d652894d6195f78e842314cc4a~tplv-k3u1fbpfcp-watermark-20220210020659063.image) 
 
 **按照读写的单位大小来分：**
 
@@ -84,7 +84,7 @@ Netty是由NIO演进而来，使用过NIO编程的用户就知道NIO编程非常
 
 - 我们的应用程序是不能直接访问硬盘的，我们程序没有权限直接访问，但是操作系统（Windows、Linux......）会给我们一部分权限较高的内存空间，他叫内核空间，和我们的实际硬盘空间是有区别的
 
-![在这里插入图片描述](https://cdn.jsdelivr.net/gh/Mark-Jackson-Github/images@master/uPic/14d813e7e5aa4132bdf5b57d29889c86~tplv-k3u1fbpfcp-watermark.image)
+![在这里插入图片描述](https://gitee.com/markgitee/images/raw/master/uPic/14d813e7e5aa4132bdf5b57d29889c86~tplv-k3u1fbpfcp-watermark-20220210020710122.image)
 
 #### 五种IO模型
 
@@ -95,19 +95,19 @@ Netty是由NIO演进而来，使用过NIO编程的用户就知道NIO编程非常
 - A拿着一支鱼竿在河边钓鱼，并且一直在鱼竿前等，在等的时候不做其他的事情，十分专心。只有鱼上钩的时，才结束掉等的动作，把鱼钓上来。
 - 在内核将数据准备好之前，系统调用会一直等待所有的套接字，默认的是阻塞方式。
 
-![在这里插入图片描述](https://cdn.jsdelivr.net/gh/Mark-Jackson-Github/images@master/uPic/ed096f92c9d64cd99f3fb9f3d512f0d6~tplv-k3u1fbpfcp-watermark.image)
+![在这里插入图片描述](https://gitee.com/markgitee/images/raw/master/uPic/ed096f92c9d64cd99f3fb9f3d512f0d6~tplv-k3u1fbpfcp-watermark-20220210020718117.image)
 
 ##### 2.非阻塞NIO（noblocking I/O）
 
 - B也在河边钓鱼，但是B不想将自己的所有时间都花费在钓鱼上，在等鱼上钩这个时间段中，B也在做其他的事情（一会看看书，一会读读报纸，一会又去看其他人的钓鱼等），但B在做这些事情的时候，每隔一个固定的时间检查鱼是否上钩。一旦检查到有鱼上钩，就停下手中的事情，把鱼钓上来。 **B在检查鱼竿是否有鱼，是一个轮询的过程。**
 
-![在这里插入图片描述](https://cdn.jsdelivr.net/gh/Mark-Jackson-Github/images@master/uPic/7c0816fb6a2745038c79fc3427c7d890~tplv-k3u1fbpfcp-watermark.image)
+![在这里插入图片描述](https://gitee.com/markgitee/images/raw/master/uPic/7c0816fb6a2745038c79fc3427c7d890~tplv-k3u1fbpfcp-watermark-20220210020724813.image)
 
 ##### 3.异步AIO（asynchronous I/O）
 
 - C也想钓鱼，但C有事情，于是他雇来了D、E、F，让他们帮他等待鱼上钩，一旦有鱼上钩，就打电话给C，C就会将鱼钓上去。
 
-![在这里插入图片描述](https://cdn.jsdelivr.net/gh/Mark-Jackson-Github/images@master/uPic/50f52cf9fdf546308dbe811fa743504a~tplv-k3u1fbpfcp-watermark.image) 当应用程序请求数据时，内核一方面去取数据报内容返回，另一方面将程序控制权还给应用进程，应用进程继续处理其他事情，是一种非阻塞的状态。
+![在这里插入图片描述](https://gitee.com/markgitee/images/raw/master/uPic/50f52cf9fdf546308dbe811fa743504a~tplv-k3u1fbpfcp-watermark-20220210020733472.image) 当应用程序请求数据时，内核一方面去取数据报内容返回，另一方面将程序控制权还给应用进程，应用进程继续处理其他事情，是一种非阻塞的状态。
 
 ##### 4.信号驱动IO（signal blocking I/O）
 
@@ -119,7 +119,7 @@ Netty是由NIO演进而来，使用过NIO编程的用户就知道NIO编程非常
 
 - H同样也在河边钓鱼，但是H生活水平比较好，H拿了很多的鱼竿，一次性有很多鱼竿在等，H不断的查看每个鱼竿是否有鱼上钩。增加了效率，减少了等待的时间。
 
-![在这里插入图片描述](https://cdn.jsdelivr.net/gh/Mark-Jackson-Github/images@master/uPic/3442e7f5308d48a694815c97c4b3893e~tplv-k3u1fbpfcp-watermark.image) IO多路转接是多了一个select函数，select函数有一个参数是文件描述符集合，对这些文件描述符进行循环监听，当某个文件描述符就绪时，就对这个文件描述符进行处理。
+![在这里插入图片描述](https://gitee.com/markgitee/images/raw/master/uPic/3442e7f5308d48a694815c97c4b3893e~tplv-k3u1fbpfcp-watermark-20220210020739325.image) IO多路转接是多了一个select函数，select函数有一个参数是文件描述符集合，对这些文件描述符进行循环监听，当某个文件描述符就绪时，就对这个文件描述符进行处理。
 
 - IO多路转接是属于阻塞IO，但可以对多个文件描述符进行阻塞监听，所以效率较阻塞IO的高。
 
@@ -165,13 +165,13 @@ Netty是由NIO演进而来，使用过NIO编程的用户就知道NIO编程非常
 
 - 这个很基础，你看看你电脑文件的属性就好了，CPU规定了计算机存储文件都是按字节算的
 
-![在这里插入图片描述](https://cdn.jsdelivr.net/gh/Mark-Jackson-Github/images@master/uPic/3e8f377e4ae948e9bb4caff72b0d451f~tplv-k3u1fbpfcp-watermark.image)
+![在这里插入图片描述](https://gitee.com/markgitee/images/raw/master/uPic/3e8f377e4ae948e9bb4caff72b0d451f~tplv-k3u1fbpfcp-watermark-20220210020748640.image)
 
 #### IO的常用类和方法，以及如何使用
 
 [注意，如果懂IO的普通文件读写操作可以直接点击此处跳过，直接看网络操作IO编程，那个才是重点，点击即会跳转](#Mark)
 
-前面讲了那么多废话，现在我们开始进入主题，后面很长，从开始的文件操作到后面的**网络IO操作**都会有例子： ![在这里插入图片描述](https://cdn.jsdelivr.net/gh/Mark-Jackson-Github/images@master/uPic/e2d87bcad4c64beabbd50bbc1e911f71~tplv-k3u1fbpfcp-watermark.image)
+前面讲了那么多废话，现在我们开始进入主题，后面很长，从开始的文件操作到后面的**网络IO操作**都会有例子： ![在这里插入图片描述](https://gitee.com/markgitee/images/raw/master/uPic/e2d87bcad4c64beabbd50bbc1e911f71~tplv-k3u1fbpfcp-watermark-20220210020844133.image)
 
  [注意，如果懂IO的普通文件读写操作可以直接点击此处跳过，直接看网络操作IO编程，那个才是重点，点击即会跳转](#Mark)
 
@@ -225,7 +225,7 @@ public class TestFileReader {
 
 - **运行结果：**
 
-![在这里插入图片描述](https://cdn.jsdelivr.net/gh/Mark-Jackson-Github/images@master/uPic/4b781e0fdce241f3b8223c8b1a62e2d5~tplv-k3u1fbpfcp-watermark.image)·![在这里插入图片描述](https://cdn.jsdelivr.net/gh/Mark-Jackson-Github/images@master/uPic/c5b99414996c4809884ea90482ace234~tplv-k3u1fbpfcp-watermark.image) 
+![在这里插入图片描述](https://gitee.com/markgitee/images/raw/master/uPic/4b781e0fdce241f3b8223c8b1a62e2d5~tplv-k3u1fbpfcp-watermark-20220210020906474.image)·![在这里插入图片描述](https://gitee.com/markgitee/images/raw/master/uPic/c5b99414996c4809884ea90482ace234~tplv-k3u1fbpfcp-watermark-20220210020856596.image) 
 
 ###### 1.2 按字符流的·处理流方式读取
 
