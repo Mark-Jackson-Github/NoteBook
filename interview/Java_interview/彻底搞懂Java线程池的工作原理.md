@@ -55,7 +55,7 @@ ExecutorService executorService2 = Executors.newCachedThreadPool();
 
 根据上述线程池生命周期状态的描述，可以画出如下所示的线程池生命周期状态流程示意图。
 
-![threadpoollifecycle.png](/Users/mark/typora_workspace/NoteBook/images/5d8c1f1d6d344862a9ba46eeb3fd101a~tplv-k3u1fbpfcp-watermark.image)
+![threadpoollifecycle.png](https://cdn.jsdelivr.net/gh/Mark-Jackson-Github/images@master/uPic/5d8c1f1d6d344862a9ba46eeb3fd101a~tplv-k3u1fbpfcp-watermark.image)
 
 ## 二、线程池的工作机制
 
@@ -106,27 +106,27 @@ public class ThreadPoolExecutor extends AbstractExecutorService {
 
 （1）当execute方法提交一个任务时，如果线程池中线程数小于corePoolSize,那么不管线程池中是否有空闲的线程，都会创建一个新的线程来执行任务。
 
-![thread_pool1.png](/Users/mark/typora_workspace/NoteBook/images/5c039cb2ce0e45d896a4dfc3a9b1fb16~tplv-k3u1fbpfcp-watermark.image)
+![thread_pool1.png](https://cdn.jsdelivr.net/gh/Mark-Jackson-Github/images@master/uPic/5c039cb2ce0e45d896a4dfc3a9b1fb16~tplv-k3u1fbpfcp-watermark.image)
 
 （2）当execute方法提交一个任务时，线程池中的线程数已经达到了corePoolSize,且此时没有空闲的线程，那么则会将任务存储到workQueue中。
 
-![thread_pool2.png](/Users/mark/typora_workspace/NoteBook/images/fe5b20e71cb44dee9785bc9b97a984c2~tplv-k3u1fbpfcp-watermark.image) （3）如果execute提交任务时线程池中的线程数已经到达了corePoolSize,并且workQueue已满，那么则会创建新的线程来执行任务，但总线程数应该小于maximumPoolSize。 ![thread_pool3.png](/Users/mark/typora_workspace/NoteBook/images/c851dfaae2aa42509ff6e6f5692677b1~tplv-k3u1fbpfcp-watermark.image)
+![thread_pool2.png](https://cdn.jsdelivr.net/gh/Mark-Jackson-Github/images@master/uPic/fe5b20e71cb44dee9785bc9b97a984c2~tplv-k3u1fbpfcp-watermark.image) （3）如果execute提交任务时线程池中的线程数已经到达了corePoolSize,并且workQueue已满，那么则会创建新的线程来执行任务，但总线程数应该小于maximumPoolSize。 ![thread_pool3.png](https://cdn.jsdelivr.net/gh/Mark-Jackson-Github/images@master/uPic/c851dfaae2aa42509ff6e6f5692677b1~tplv-k3u1fbpfcp-watermark.image)
 
 （4）如果线程池中的线程执行完了当前的任务，则会尝试从workQueue中取出第一个任务来执行。如果workQueue为空则会阻塞线程。
 
-![thread_pool4.png](/Users/mark/typora_workspace/NoteBook/images/ae71487680d442018ec986298a4aa6a4~tplv-k3u1fbpfcp-watermark.image)
+![thread_pool4.png](https://cdn.jsdelivr.net/gh/Mark-Jackson-Github/images@master/uPic/ae71487680d442018ec986298a4aa6a4~tplv-k3u1fbpfcp-watermark.image)
 
 （5）如果execute提交任务时，线程池中的线程数达到了maximumPoolSize，且workQueue已满，此时会执行拒绝策略来拒绝接受任务。
 
-![thread_pool5.png](/Users/mark/typora_workspace/NoteBook/images/54aa9d3b5ddc46d1a368e23228324fdd~tplv-k3u1fbpfcp-watermark.image)
+![thread_pool5.png](https://cdn.jsdelivr.net/gh/Mark-Jackson-Github/images@master/uPic/54aa9d3b5ddc46d1a368e23228324fdd~tplv-k3u1fbpfcp-watermark.image)
 
 （6）如果线程池中的线程数超过了corePoolSize，那么空闲时间超过keepAliveTime的线程会被销毁，但程池中线程个数会保持为corePoolSize。
 
-![thread_pool6.png](/Users/mark/typora_workspace/NoteBook/images/62a1b6b1198c4a8ebcabe3da1904cb80~tplv-k3u1fbpfcp-watermark.image)
+![thread_pool6.png](https://cdn.jsdelivr.net/gh/Mark-Jackson-Github/images@master/uPic/62a1b6b1198c4a8ebcabe3da1904cb80~tplv-k3u1fbpfcp-watermark.image)
 
 （7）如果线程池存在空闲的线程，并且设置了allowCoreThreadTimeOut为true。那么空闲时间超过keepAliveTime的线程都会被销毁。
 
-![thread_pool7.png](/Users/mark/typora_workspace/NoteBook/images/98a5abfc71f34183a9ff7aecd5d40b42~tplv-k3u1fbpfcp-watermark.image)
+![thread_pool7.png](https://cdn.jsdelivr.net/gh/Mark-Jackson-Github/images@master/uPic/98a5abfc71f34183a9ff7aecd5d40b42~tplv-k3u1fbpfcp-watermark.image)
 
 ### 3.线程池的拒绝策略
 
@@ -614,9 +614,3 @@ shutdown的逻辑比较简单，里边做了两件比较重要的事情，即先
 ## 五、总结
 
 本文深入的探究了线程池的工作流程和实现原理。就线程池的工作流程而言其实并不难以理解。但是在分析线程池的源码时，如果没有很好的并发基础的话，大概率是难以读懂线程池的源码的。因为线程池内部使用了大量并发知识，对任何一点用到的并发知识认识不到位都会造成理解偏差。写这篇文章参看了很多的其他线程池的相关文章，几乎没有找到一篇能够剖析清楚线程池源码的文章。归根结底还是没能系统的理解Atomic、Lock与AQS、CAS、阻塞队列等并发相关知识。
-
-
-作者：赌一包辣条
-链接：https://juejin.cn/post/6983213662383112206
-来源：稀土掘金
-著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。

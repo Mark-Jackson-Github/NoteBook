@@ -15,7 +15,7 @@
 - Java中I/O是以流为基础进行数据的输入输出的，所有数据被串行化(所谓串行化就是数据要按顺序进行输入输出)写入输出流。简单来说就是java通过io流方式和外部设备进行交互。
 - 在Java类库中，IO部分的内容是很庞大的，因为它涉及的领域很广泛：标准输入输出，文件的操作，**网络上的数据传输流**，字符串流，对象流等等等。
 
-![在这里插入图片描述](/Users/mark/typora_workspace/NoteBook/images/18f13af1f906411f91ca22a575fe79a9~tplv-k3u1fbpfcp-watermark.image)
+![在这里插入图片描述](https://cdn.jsdelivr.net/gh/Mark-Jackson-Github/images@master/uPic/18f13af1f906411f91ca22a575fe79a9~tplv-k3u1fbpfcp-watermark.image)
 
 - 比如程序从服务器上下载图片，就是通过流的方式从网络上以流的方式到程序中，在到硬盘中
 
@@ -45,7 +45,7 @@
 - Netty是由JBOSS提供的一个Java开源框架。Netty提供异步的、事件驱动的网络应用程序框架和工具，用以快速开发高性能、高可靠性的网络服务器和客户端程序。
 - Netty 是一个基于NIO的客户、服务器端编程框架，使用Netty 可以确保你快速和简单的开发出一个网络应用，例如实现了某种协议的客户，服务端应用。Netty相当简化和流线化了网络应用的编程开发过程，例如，TCP和UDP的socket服务开发。
 
-![在这里插入图片描述](/Users/mark/typora_workspace/NoteBook/images/b415ebcf9b5c4e9b83e86870d5d22695~tplv-k3u1fbpfcp-watermark.image) Netty是由NIO演进而来，使用过NIO编程的用户就知道NIO编程非常繁重，Netty是能够能跟好的使用NIO
+Netty是由NIO演进而来，使用过NIO编程的用户就知道NIO编程非常繁重，Netty是能够能跟好的使用NIO
 
 #### BIO和NIO、AIO的区别
 
@@ -56,7 +56,9 @@
 
 #### IO流的分类
 
-![在这里插入图片描述](/Users/mark/typora_workspace/NoteBook/images/7561c1d652894d6195f78e842314cc4a~tplv-k3u1fbpfcp-watermark.image) **按照读写的单位大小来分：**
+![在这里插入图片描述](https://cdn.jsdelivr.net/gh/Mark-Jackson-Github/images@master/uPic/7561c1d652894d6195f78e842314cc4a~tplv-k3u1fbpfcp-watermark.image) 
+
+**按照读写的单位大小来分：**
 
 - `字符流`：以字符为单位，每次次读入或读出是16位数据。其只能读取字符类型数据。
 
@@ -82,7 +84,7 @@
 
 - 我们的应用程序是不能直接访问硬盘的，我们程序没有权限直接访问，但是操作系统（Windows、Linux......）会给我们一部分权限较高的内存空间，他叫内核空间，和我们的实际硬盘空间是有区别的
 
-![在这里插入图片描述](/Users/mark/typora_workspace/NoteBook/images/14d813e7e5aa4132bdf5b57d29889c86~tplv-k3u1fbpfcp-watermark.image)
+![在这里插入图片描述](https://cdn.jsdelivr.net/gh/Mark-Jackson-Github/images@master/uPic/14d813e7e5aa4132bdf5b57d29889c86~tplv-k3u1fbpfcp-watermark.image)
 
 #### 五种IO模型
 
@@ -93,31 +95,31 @@
 - A拿着一支鱼竿在河边钓鱼，并且一直在鱼竿前等，在等的时候不做其他的事情，十分专心。只有鱼上钩的时，才结束掉等的动作，把鱼钓上来。
 - 在内核将数据准备好之前，系统调用会一直等待所有的套接字，默认的是阻塞方式。
 
-![在这里插入图片描述](/Users/mark/typora_workspace/NoteBook/images/ed096f92c9d64cd99f3fb9f3d512f0d6~tplv-k3u1fbpfcp-watermark.image)
+![在这里插入图片描述](https://cdn.jsdelivr.net/gh/Mark-Jackson-Github/images@master/uPic/ed096f92c9d64cd99f3fb9f3d512f0d6~tplv-k3u1fbpfcp-watermark.image)
 
 ##### 2.非阻塞NIO（noblocking I/O）
 
 - B也在河边钓鱼，但是B不想将自己的所有时间都花费在钓鱼上，在等鱼上钩这个时间段中，B也在做其他的事情（一会看看书，一会读读报纸，一会又去看其他人的钓鱼等），但B在做这些事情的时候，每隔一个固定的时间检查鱼是否上钩。一旦检查到有鱼上钩，就停下手中的事情，把鱼钓上来。 **B在检查鱼竿是否有鱼，是一个轮询的过程。**
 
-![在这里插入图片描述](/Users/mark/typora_workspace/NoteBook/images/7c0816fb6a2745038c79fc3427c7d890~tplv-k3u1fbpfcp-watermark.image)
+![在这里插入图片描述](https://cdn.jsdelivr.net/gh/Mark-Jackson-Github/images@master/uPic/7c0816fb6a2745038c79fc3427c7d890~tplv-k3u1fbpfcp-watermark.image)
 
 ##### 3.异步AIO（asynchronous I/O）
 
 - C也想钓鱼，但C有事情，于是他雇来了D、E、F，让他们帮他等待鱼上钩，一旦有鱼上钩，就打电话给C，C就会将鱼钓上去。
 
-![在这里插入图片描述](/Users/mark/typora_workspace/NoteBook/images/50f52cf9fdf546308dbe811fa743504a~tplv-k3u1fbpfcp-watermark.image) 当应用程序请求数据时，内核一方面去取数据报内容返回，另一方面将程序控制权还给应用进程，应用进程继续处理其他事情，是一种非阻塞的状态。
+![在这里插入图片描述](https://cdn.jsdelivr.net/gh/Mark-Jackson-Github/images@master/uPic/50f52cf9fdf546308dbe811fa743504a~tplv-k3u1fbpfcp-watermark.image) 当应用程序请求数据时，内核一方面去取数据报内容返回，另一方面将程序控制权还给应用进程，应用进程继续处理其他事情，是一种非阻塞的状态。
 
 ##### 4.信号驱动IO（signal blocking I/O）
 
 - G也在河边钓鱼，但与A、B、C不同的是，G比较聪明，他给鱼竿上挂一个铃铛，当有鱼上钩的时候，这个铃铛就会被碰响，G就会将鱼钓上来。
 
-![在这里插入图片描述](/Users/mark/typora_workspace/NoteBook/images/8424339c824c4831a6483fa6e0047a5b~tplv-k3u1fbpfcp-watermark.image) 信号驱动IO模型，应用进程告诉内核：当数据报准备好的时候，给我发送一个信号，对SIGIO信号进行捕捉，并且调用我的信号处理函数来获取数据报。
+![在这里插入图片描述](https://cdn.jsdelivr.net/gh/Mark-Jackson-Github/images@master/uPic/8424339c824c4831a6483fa6e0047a5b~tplv-k3u1fbpfcp-watermark.image) 信号驱动IO模型，应用进程告诉内核：当数据报准备好的时候，给我发送一个信号，对SIGIO信号进行捕捉，并且调用我的信号处理函数来获取数据报。
 
 ##### 5.IO多路转接（I/O multiplexing）
 
 - H同样也在河边钓鱼，但是H生活水平比较好，H拿了很多的鱼竿，一次性有很多鱼竿在等，H不断的查看每个鱼竿是否有鱼上钩。增加了效率，减少了等待的时间。
 
-![在这里插入图片描述](/Users/mark/typora_workspace/NoteBook/images/3442e7f5308d48a694815c97c4b3893e~tplv-k3u1fbpfcp-watermark.image) IO多路转接是多了一个select函数，select函数有一个参数是文件描述符集合，对这些文件描述符进行循环监听，当某个文件描述符就绪时，就对这个文件描述符进行处理。
+![在这里插入图片描述](https://cdn.jsdelivr.net/gh/Mark-Jackson-Github/images@master/uPic/3442e7f5308d48a694815c97c4b3893e~tplv-k3u1fbpfcp-watermark.image) IO多路转接是多了一个select函数，select函数有一个参数是文件描述符集合，对这些文件描述符进行循环监听，当某个文件描述符就绪时，就对这个文件描述符进行处理。
 
 - IO多路转接是属于阻塞IO，但可以对多个文件描述符进行阻塞监听，所以效率较阻塞IO的高。
 
@@ -163,13 +165,15 @@
 
 - 这个很基础，你看看你电脑文件的属性就好了，CPU规定了计算机存储文件都是按字节算的
 
-![在这里插入图片描述](/Users/mark/typora_workspace/NoteBook/images/3e8f377e4ae948e9bb4caff72b0d451f~tplv-k3u1fbpfcp-watermark.image)
+![在这里插入图片描述](https://cdn.jsdelivr.net/gh/Mark-Jackson-Github/images@master/uPic/3e8f377e4ae948e9bb4caff72b0d451f~tplv-k3u1fbpfcp-watermark.image)
 
 #### IO的常用类和方法，以及如何使用
 
 [注意，如果懂IO的普通文件读写操作可以直接点击此处跳过，直接看网络操作IO编程，那个才是重点，点击即会跳转](#Mark)
 
-前面讲了那么多废话，现在我们开始进入主题，后面很长，从开始的文件操作到后面的**网络IO操作**都会有例子： ![在这里插入图片描述](/Users/mark/typora_workspace/NoteBook/images/e2d87bcad4c64beabbd50bbc1e911f71~tplv-k3u1fbpfcp-watermark.image) [注意，如果懂IO的普通文件读写操作可以直接点击此处跳过，直接看网络操作IO编程，那个才是重点，点击即会跳转](#Mark)
+前面讲了那么多废话，现在我们开始进入主题，后面很长，从开始的文件操作到后面的**网络IO操作**都会有例子： ![在这里插入图片描述](https://cdn.jsdelivr.net/gh/Mark-Jackson-Github/images@master/uPic/e2d87bcad4c64beabbd50bbc1e911f71~tplv-k3u1fbpfcp-watermark.image)
+
+ [注意，如果懂IO的普通文件读写操作可以直接点击此处跳过，直接看网络操作IO编程，那个才是重点，点击即会跳转](#Mark)
 
 #### IO基本操作讲解
 
@@ -221,7 +225,7 @@ public class TestFileReader {
 
 - **运行结果：**
 
-![在这里插入图片描述](/Users/mark/typora_workspace/NoteBook/images/4b781e0fdce241f3b8223c8b1a62e2d5~tplv-k3u1fbpfcp-watermark.image)·![在这里插入图片描述](/Users/mark/typora_workspace/NoteBook/images/c5b99414996c4809884ea90482ace234~tplv-k3u1fbpfcp-watermark.image) 
+![在这里插入图片描述](https://cdn.jsdelivr.net/gh/Mark-Jackson-Github/images@master/uPic/4b781e0fdce241f3b8223c8b1a62e2d5~tplv-k3u1fbpfcp-watermark.image)·![在这里插入图片描述](https://cdn.jsdelivr.net/gh/Mark-Jackson-Github/images@master/uPic/c5b99414996c4809884ea90482ace234~tplv-k3u1fbpfcp-watermark.image) 
 
 ###### 1.2 按字符流的·处理流方式读取
 
@@ -262,7 +266,7 @@ public class TestBufferedReader {
 
 - 测试效果一样
 
-![在这里插入图片描述](/Users/mark/typora_workspace/NoteBook/images/fc4407b2b2aa49309fa2122a01b81365~tplv-k3u1fbpfcp-watermark.image) 
+![在这里插入图片描述](https://cdn.jsdelivr.net/gh/Mark-Jackson-Github/images@master/uPic/fc4407b2b2aa49309fa2122a01b81365~tplv-k3u1fbpfcp-watermark.image) 
 
 ##### 2 按`字符`流写出文件
 
@@ -295,7 +299,7 @@ public class TestFileWriter {
 复制代码
 ```
 
-- **运行效果**： ![在这里插入图片描述](/Users/mark/typora_workspace/NoteBook/images/f74225cfa1764488b476d9e33bdc96e0~tplv-k3u1fbpfcp-watermark.image) 
+- **运行效果**： ![在这里插入图片描述](https://cdn.jsdelivr.net/gh/Mark-Jackson-Github/images@master/uPic/f74225cfa1764488b476d9e33bdc96e0~tplv-k3u1fbpfcp-watermark.image) 
 
 ###### 2.2 按字符流的·处理流方式写出
 
@@ -323,7 +327,7 @@ public class TestBufferedWriter {
 复制代码
 ```
 
-- **运行效果**： ![在这里插入图片描述](/Users/mark/typora_workspace/NoteBook/images/05c846335d424c2e99a1e84f04db48d5~tplv-k3u1fbpfcp-watermark.image) 
+- **运行效果**： ![在这里插入图片描述](https://cdn.jsdelivr.net/gh/Mark-Jackson-Github/images@master/uPic/05c846335d424c2e99a1e84f04db48d5~tplv-k3u1fbpfcp-watermark.image) 
 
 ##### 3 按`字节`流写入写出文件
 
@@ -373,7 +377,7 @@ public class TestFileOutputStream {
 
 - **运行之前：**
 
-![在这里插入图片描述](/Users/mark/typora_workspace/NoteBook/images/e0f5373d4d344a6db02277f57a10f24e~tplv-k3u1fbpfcp-watermark.image) **运行之后：** ![在这里插入图片描述](/Users/mark/typora_workspace/NoteBook/images/cafad8acda2e470eb35fa9c11462da87~tplv-k3u1fbpfcp-watermark.image) 
+![在这里插入图片描述](https://cdn.jsdelivr.net/gh/Mark-Jackson-Github/images@master/uPic/e0f5373d4d344a6db02277f57a10f24e~tplv-k3u1fbpfcp-watermark.image) **运行之后：** ![在这里插入图片描述](https://cdn.jsdelivr.net/gh/Mark-Jackson-Github/images@master/uPic/cafad8acda2e470eb35fa9c11462da87~tplv-k3u1fbpfcp-watermark.image) 
 
 ###### 3.2 按字节流的·处理流写入写出文件
 
@@ -411,7 +415,7 @@ public class TestBufferedOutputStream {
 
 - **运行之前：**
 
-![在这里插入图片描述](/Users/mark/typora_workspace/NoteBook/images/1de43d3002cb4778914200b41395f672~tplv-k3u1fbpfcp-watermark.image) **运行之后：** ![在这里插入图片描述](/Users/mark/typora_workspace/NoteBook/images/b8ab3a1a932541b4b6f7550af2e76bfe~tplv-k3u1fbpfcp-watermark.image)
+![在这里插入图片描述](https://cdn.jsdelivr.net/gh/Mark-Jackson-Github/images@master/uPic/1de43d3002cb4778914200b41395f672~tplv-k3u1fbpfcp-watermark.image) **运行之后：** ![在这里插入图片描述](https://cdn.jsdelivr.net/gh/Mark-Jackson-Github/images@master/uPic/b8ab3a1a932541b4b6f7550af2e76bfe~tplv-k3u1fbpfcp-watermark.image)
 
 #### 网络操作IO讲解
 
@@ -423,20 +427,24 @@ public class TestBufferedOutputStream {
 ##### 1 BIO编程会出现什么问题？
 
 - BIO是阻塞的
-- **例子：** 阻塞IO（blocking I/O） A拿着一支鱼竿在河边钓鱼，并且一直在鱼竿前等，在等的时候不做其他的事情，十分专心。只有鱼上钩的时，才结束掉等的动作，把鱼钓上来。 ![在这里插入图片描述](/Users/mark/typora_workspace/NoteBook/images/37d39b4b62314bfe83ec1c7651794d52~tplv-k3u1fbpfcp-watermark.image)
+- **例子：** 阻塞IO（blocking I/O） A拿着一支鱼竿在河边钓鱼，并且一直在鱼竿前等，在等的时候不做其他的事情，十分专心。只有鱼上钩的时，才结束掉等的动作，把鱼钓上来。 ![在这里插入图片描述](https://cdn.jsdelivr.net/gh/Mark-Jackson-Github/images@master/uPic/37d39b4b62314bfe83ec1c7651794d52~tplv-k3u1fbpfcp-watermark.image)
 - 看起来没问题，但是我很多请求一起发送请求资源怎么办：
 
-![在这里插入图片描述](/Users/mark/typora_workspace/NoteBook/images/69b296d0b6aa48dd8bb2d3d3d1a2ef53~tplv-k3u1fbpfcp-watermark.image) **那不是要等待第一个人资源完成后后面的人才可以继续？** 因为BIO是阻塞的所以读取写出操作都是非常浪费资源的
+![在这里插入图片描述](https://cdn.jsdelivr.net/gh/Mark-Jackson-Github/images@master/uPic/69b296d0b6aa48dd8bb2d3d3d1a2ef53~tplv-k3u1fbpfcp-watermark.image) **那不是要等待第一个人资源完成后后面的人才可以继续？** 因为BIO是阻塞的所以读取写出操作都是非常浪费资源的
 
 **BIO代码示例：**（`后面有代码，往后移动一点点，认真看，代码学习量很足`）
 
 - 我这有三个类，我模拟启动服务端，然后启动客户端，模拟客户端操作未完成的时候启动第二个客户端
 
-![在这里插入图片描述](/Users/mark/typora_workspace/NoteBook/images/caec6c45d85c4de7bc5477652bcc092e~tplv-k3u1fbpfcp-watermark.image)
+![在这里插入图片描述](https://cdn.jsdelivr.net/gh/Mark-Jackson-Github/images@master/uPic/caec6c45d85c4de7bc5477652bcc092e~tplv-k3u1fbpfcp-watermark.image)
 
 1. 启动服务端（`后面有代码，我这是教运行顺序`）
 
-![在这里插入图片描述](/Users/mark/typora_workspace/NoteBook/images/89104529482c47e0b772cffa70c687b4~tplv-k3u1fbpfcp-watermark.image) 2. 启动第一个客户端，发现服务器显示连接成功 `先不要在控制台 输入 ，模拟堵塞。（我的代码输入了就代表请求完成了）` ![在这里插入图片描述](/Users/mark/typora_workspace/NoteBook/images/5bafd86cca7a495f972f5222f17d125e~tplv-k3u1fbpfcp-watermark.image)·![在这里插入图片描述](/Users/mark/typora_workspace/NoteBook/images/f5f24ba981e44ddd8a27c7a3ee8eb857~tplv-k3u1fbpfcp-watermark.image)3. 启动第二个客户端，`发现服务端没效果`，而客户端连接成功（在堵塞当中） `我这启动了俩个Client，注意看，(这俩个代码是一样的)` ![在这里插入图片描述](/Users/mark/typora_workspace/NoteBook/images/8e11cdd84ae84ab08128243530391ab9~tplv-k3u1fbpfcp-watermark.image)·![在这里插入图片描述](/Users/mark/typora_workspace/NoteBook/images/0b3ff0c759e64e5082e59f52e2ea35a5~tplv-k3u1fbpfcp-watermark.image) 4. 第一个客户控制台输入，输入完后就会关闭第一个客户端， 在看服务端发现第二个客户端连接上来了 ![在这里插入图片描述](/Users/mark/typora_workspace/NoteBook/images/97083b3789464f7791b9f2672f6d3e01~tplv-k3u1fbpfcp-watermark.image)·![在这里插入图片描述](/Users/mark/typora_workspace/NoteBook/images/6e1b1a41e67a434ca149175ad4b6cdfb~tplv-k3u1fbpfcp-watermark.image)
+![在这里插入图片描述](https://cdn.jsdelivr.net/gh/Mark-Jackson-Github/images@master/uPic/89104529482c47e0b772cffa70c687b4~tplv-k3u1fbpfcp-watermark.image) 
+
+2. 启动第一个客户端，发现服务器显示连接成功 `先不要在控制台 输入 ，模拟堵塞。（我的代码输入了就代表请求完成了）` ![在这里插入图片描述](https://cdn.jsdelivr.net/gh/Mark-Jackson-Github/images@master/uPic/5bafd86cca7a495f972f5222f17d125e~tplv-k3u1fbpfcp-watermark.image)·![在这里插入图片描述](https://cdn.jsdelivr.net/gh/Mark-Jackson-Github/images@master/uPic/f5f24ba981e44ddd8a27c7a3ee8eb857~tplv-k3u1fbpfcp-watermark.image)
+3. 3. 启动第二个客户端，`发现服务端没效果`，而客户端连接成功（在堵塞当中） `我这启动了俩个Client，注意看，(这俩个代码是一样的)` ![在这里插入图片描述](/Users/mark/typora_workspace/NoteBook/images/8e11cdd84ae84ab08128243530391ab9~tplv-k3u1fbpfcp-watermark.image)·![在这里插入图片描述](https://cdn.jsdelivr.net/gh/Mark-Jackson-Github/images@master/uPic/0b3ff0c759e64e5082e59f52e2ea35a5~tplv-k3u1fbpfcp-watermark.image) 
+    4. 4. 第一个客户控制台输入，输入完后就会关闭第一个客户端， 在看服务端发现第二个客户端连接上来了 ![在这里插入图片描述](https://cdn.jsdelivr.net/gh/Mark-Jackson-Github/images@master/uPic/97083b3789464f7791b9f2672f6d3e01~tplv-k3u1fbpfcp-watermark.image)·![在这里插入图片描述](https://cdn.jsdelivr.net/gh/Mark-Jackson-Github/images@master/uPic/6e1b1a41e67a434ca149175ad4b6cdfb~tplv-k3u1fbpfcp-watermark.image)
 
 **BIO通信代码：**
 
@@ -560,13 +568,13 @@ public class Client02 {
 - 使用多线程是可以解决堵塞等待时间很长的问题，因为他可以充分发挥CPU
 - 然而系统资源是有限的，不能过多的新建线程，线程过多带来线程上下文的切换，从来带来更大的性能损耗
 
-![在这里插入图片描述](/Users/mark/typora_workspace/NoteBook/images/55e62cd6e3ce4f05b91737baa96e5d01~tplv-k3u1fbpfcp-watermark.image)
+![在这里插入图片描述](https://cdn.jsdelivr.net/gh/Mark-Jackson-Github/images@master/uPic/55e62cd6e3ce4f05b91737baa96e5d01~tplv-k3u1fbpfcp-watermark.image)
 
-**万一请求越来越多，线程越来越多那我CPU不就炸了？** ![在这里插入图片描述](/Users/mark/typora_workspace/NoteBook/images/43bb1ea308364759b9c6d8a32c0d19ed~tplv-k3u1fbpfcp-watermark.image) **多线程BIO代码示例：**
+**万一请求越来越多，线程越来越多那我CPU不就炸了？** ![在这里插入图片描述](https://cdn.jsdelivr.net/gh/Mark-Jackson-Github/images@master/uPic/43bb1ea308364759b9c6d8a32c0d19ed~tplv-k3u1fbpfcp-watermark.image) **多线程BIO代码示例：**
 
 - 四个客户端，这次我多复制了俩个一样客户端类
 
-![在这里插入图片描述](/Users/mark/typora_workspace/NoteBook/images/87e1cdaa6fb44b7495c6d0598ab40112~tplv-k3u1fbpfcp-watermark.image) `先启动服务端，在启动所有客户端，测试`，发现连接成功（`后面有代码`） ![在这里插入图片描述](/Users/mark/typora_workspace/NoteBook/images/dcda403010ed47e2a480c3a177e5bd91~tplv-k3u1fbpfcp-watermark.image) 在所有客户端输入消息（`Client01、Client02这些是我在客户端输入的消息`）：发现没有问题 ![在这里插入图片描述](/Users/mark/typora_workspace/NoteBook/images/75ba3997d8af4153a38be6d73578dfeb~tplv-k3u1fbpfcp-watermark.image)
+![在这里插入图片描述](https://cdn.jsdelivr.net/gh/Mark-Jackson-Github/images@master/uPic/87e1cdaa6fb44b7495c6d0598ab40112~tplv-k3u1fbpfcp-watermark.image) `先启动服务端，在启动所有客户端，测试`，发现连接成功（`后面有代码`） ![在这里插入图片描述](https://cdn.jsdelivr.net/gh/Mark-Jackson-Github/images@master/uPic/dcda403010ed47e2a480c3a177e5bd91~tplv-k3u1fbpfcp-watermark.image) 在所有客户端输入消息（`Client01、Client02这些是我在客户端输入的消息`）：发现没有问题 ![在这里插入图片描述](https://cdn.jsdelivr.net/gh/Mark-Jackson-Github/images@master/uPic/75ba3997d8af4153a38be6d73578dfeb~tplv-k3u1fbpfcp-watermark.image)
 
 **多线程BIO通信代码：**
 
@@ -623,7 +631,7 @@ public class BIOThreadService {
 
 ##### 3 线程池解决多线程BIO编程会出现的问题
 
-**这时有人就会说，我TM用线程池?** ![在这里插入图片描述](/Users/mark/typora_workspace/NoteBook/images/f64d76991f2c4b398d1a943225b9252a~tplv-k3u1fbpfcp-watermark.image)
+**这时有人就会说，我TM用线程池?** ![在这里插入图片描述](https://cdn.jsdelivr.net/gh/Mark-Jackson-Github/images@master/uPic/f64d76991f2c4b398d1a943225b9252a~tplv-k3u1fbpfcp-watermark.image)
 
 - 线程池固然可以解决这个问题，万一需求量还不够还要扩大线程池。当是这是我们自己靠着自己的思想完成的IO操作，Socket 上来了就去创建线程去抢夺CPU资源，MD，线程都TM做IO去了，CPU也不舒服呀
 - 这时呢：Jdk官方坐不住了，兄弟BIO的问题交给我，我来给你解决：`NIO的诞生`
@@ -632,7 +640,7 @@ public class BIOThreadService {
 
 - 四个客户端
 
-![在这里插入图片描述](/Users/mark/typora_workspace/NoteBook/images/969ff117d2324816a0fb45da60f1b10d~tplv-k3u1fbpfcp-watermark.image) `先启动服务端，在启动所有客户端，测试`，（`后面有代码`） ![在这里插入图片描述](/Users/mark/typora_workspace/NoteBook/images/90d19c90b28d458bb94cd3ad49e98246~tplv-k3u1fbpfcp-watermark.image) 在所有客户端输入消息（`Client01、Client02这些是我在客户端输入的消息`）：发现没有问题 ![在这里插入图片描述](/Users/mark/typora_workspace/NoteBook/images/01a5cc9a3c00474080204db00a56a08c~tplv-k3u1fbpfcp-watermark.image)
+![在这里插入图片描述](https://cdn.jsdelivr.net/gh/Mark-Jackson-Github/images@master/uPic/969ff117d2324816a0fb45da60f1b10d~tplv-k3u1fbpfcp-watermark.image) `先启动服务端，在启动所有客户端，测试`，（`后面有代码`） ![在这里插入图片描述](https://cdn.jsdelivr.net/gh/Mark-Jackson-Github/images@master/uPic/90d19c90b28d458bb94cd3ad49e98246~tplv-k3u1fbpfcp-watermark.image) 在所有客户端输入消息（`Client01、Client02这些是我在客户端输入的消息`）：发现没有问题 ![在这里插入图片描述](https://cdn.jsdelivr.net/gh/Mark-Jackson-Github/images@master/uPic/01a5cc9a3c00474080204db00a56a08c~tplv-k3u1fbpfcp-watermark.image)
 
 **线程池BIO通信代码：**
 
@@ -697,7 +705,7 @@ public class BIOThreadPoolService {
 
 - NIO是JDK1.4提供的操作，他的流还是流，没有改变，服务器实现的还是一个连接一个线程，当是：`客户端发送的连接请求都会注册到多路复用器上`，多路复用器轮询到连接有I/O请求时才启动一个线程进行处理。NIO方式适用于连接数目多且连接比较短（轻操作）的架构，比如聊天服务器，并发局限于应用中，编程比较复杂，JDK1.4之后开始支持。
 
-![在这里插入图片描述](/Users/mark/typora_workspace/NoteBook/images/b7875daa184a4b1a9c497fc188269d25~tplv-k3u1fbpfcp-watermark.image) `看不懂介绍可以认真看看代码实例，其实不难`
+![在这里插入图片描述](https://cdn.jsdelivr.net/gh/Mark-Jackson-Github/images@master/uPic/b7875daa184a4b1a9c497fc188269d25~tplv-k3u1fbpfcp-watermark.image) `看不懂介绍可以认真看看代码实例，其实不难`
 
 ###### 什么是通道（Channel）
 
@@ -720,11 +728,11 @@ public class BIOThreadPoolService {
 
 - 目录结构
 
-![在这里插入图片描述](/Users/mark/typora_workspace/NoteBook/images/182694b1feda4c2fa8fdb0ab3e6d33ae~tplv-k3u1fbpfcp-watermark.image)
+![在这里插入图片描述](https://cdn.jsdelivr.net/gh/Mark-Jackson-Github/images@master/uPic/182694b1feda4c2fa8fdb0ab3e6d33ae~tplv-k3u1fbpfcp-watermark.image)
 
 - 运行示例，先运行服务端，在运行所有客户端控制台输入消息就好了。：`我这客户端和服务端代码有些修该变，后面有代码`
 
-![在这里插入图片描述](/Users/mark/typora_workspace/NoteBook/images/4c8a1bb11fae46308249ca98d263c98d~tplv-k3u1fbpfcp-watermark.image)
+![在这里插入图片描述](https://cdn.jsdelivr.net/gh/Mark-Jackson-Github/images@master/uPic/4c8a1bb11fae46308249ca98d263c98d~tplv-k3u1fbpfcp-watermark.image)
 
 - `服务端示例，先运行，想要搞定NIO请认真看代码示例，真的很清楚`
 
@@ -820,7 +828,7 @@ public class NIOServer {
 
 - 客户端示例：（`我这用的不是之前的了，有修改`）运行起来客户端控制台输入消息就好了。
 
-`要模拟测试，请复制粘贴改一下，修改客户端的类名就行了，四个客户端代码一样的`, ![在这里插入图片描述](/Users/mark/typora_workspace/NoteBook/images/c7c46a480683468abaafcf901780e019~tplv-k3u1fbpfcp-watermark.image)
+`要模拟测试，请复制粘贴改一下，修改客户端的类名就行了，四个客户端代码一样的`, ![在这里插入图片描述](https://cdn.jsdelivr.net/gh/Mark-Jackson-Github/images@master/uPic/c7c46a480683468abaafcf901780e019~tplv-k3u1fbpfcp-watermark.image)
 
 ```java
 package com.test.io;
@@ -860,12 +868,12 @@ public class Client01 {
 - Netty是由JBOSS提供的一个Java开源框架。Netty提供异步的、事件驱动的网络应用程序框架和工具，用以快速开发高性能、高可靠性的网络服务器和客户端程序。
 - Netty 是一个基于NIO的客户、服务器端编程框架，使用Netty 可以确保你快速和简单的开发出一个网络应用，例如实现了某种协议的客户，服务端应用。Netty相当简化和流线化了网络应用的编程开发过程，例如，TCP和UDP的Socket服务开发。
 
-![在这里插入图片描述](/Users/mark/typora_workspace/NoteBook/images/87bf5a206b7f40d8a1d3a6d8ec5a71d3~tplv-k3u1fbpfcp-watermark.image) Netty是由NIO演进而来，使用过NIO编程的用户就知道NIO编程非常繁重，Netty是能够能跟好的使用NIO
+Netty是由NIO演进而来，使用过NIO编程的用户就知道NIO编程非常繁重，Netty是能够能跟好的使用NIO
 
 - Netty的原里就是NIO，他是基于NIO的一个完美的封装，并且优化了NIO，使用他非常方便，简单快捷
 - 我直接上代码：
 
-![在这里插入图片描述](/Users/mark/typora_workspace/NoteBook/images/71ef664154f142af84a7f790500a4f5d~tplv-k3u1fbpfcp-watermark.image)
+![在这里插入图片描述](https://cdn.jsdelivr.net/gh/Mark-Jackson-Github/images@master/uPic/71ef664154f142af84a7f790500a4f5d~tplv-k3u1fbpfcp-watermark.image)
 
 - 1、先添加依赖：
 
@@ -995,10 +1003,6 @@ public class Client01 {
 
 - 运行测试，还是之前那样，启动服务端，在启动所有客户端控制台输入就好了：
 
-![在这里插入图片描述](/Users/mark/typora_workspace/NoteBook/images/baa9bfcfe10b4071ab52c9b8c9ed894e~tplv-k3u1fbpfcp-watermark.image)
+![在这里插入图片描述](https://cdn.jsdelivr.net/gh/Mark-Jackson-Github/images@master/uPic/baa9bfcfe10b4071ab52c9b8c9ed894e~tplv-k3u1fbpfcp-watermark.image)
 
 
-作者：小杰要吃蛋
-链接：https://juejin.cn/post/7006344282982318110
-来源：稀土掘金
-著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。

@@ -1,10 +1,8 @@
 # 一篇文章掌握整个JVM，JVM超详细解析
 
-![一篇文章掌握整个JVM，JVM超详细解析！！！](/Users/mark/typora_workspace/NoteBook/images/9576988ae8094a36a77674218e882dbd~tplv-k3u1fbpfcp-zoom-crop-mark:1304:1304:1304:734.image)
+![一篇文章掌握整个JVM，JVM超详细解析！！！](https://cdn.jsdelivr.net/gh/Mark-Jackson-Github/images@master/uPic/9576988ae8094a36a77674218e882dbd~tplv-k3u1fbpfcp-zoom-crop-mark:1304:1304:1304:734.image)
 
-@[TOC](https://link.juejin.cn/?target=JVM)
-
-`不懂JVM看完这一篇文章你就会非常懂了，文章很长，非常详细！！！` ![在这里插入图片描述](/Users/mark/typora_workspace/NoteBook/images/fdfb95d0cbcc4c7abafde3e9ddd53996~tplv-k3u1fbpfcp-watermark.image)
+`不懂JVM看完这一篇文章你就会非常懂了，文章很长，非常详细！！！` !
 
 ## 先想想一些问题
 
@@ -20,7 +18,7 @@
 2. 由javac编译成字节码文件.class：（为什么编译成class文件，因为JVM只认识.class文件）
 3. 在由JVM编译成电脑认识的文件 （对于电脑系统来说 文件代表一切）
 
-（这是一个大概的观念 抽象画的概念） ![在这里插入图片描述](/Users/mark/typora_workspace/NoteBook/images/d285e01e3324408bb38867d322c395b9~tplv-k3u1fbpfcp-watermark.image)
+（这是一个大概的观念 抽象画的概念） ![在这里插入图片描述](https://cdn.jsdelivr.net/gh/Mark-Jackson-Github/images@master/uPic/d285e01e3324408bb38867d322c395b9~tplv-k3u1fbpfcp-watermark.image)
 
 ### 2 为什么说java是跨平台语言
 
@@ -38,7 +36,7 @@ Jre大部分都是 C 和 C++ 语言编写的，他是我们在编译java时所�
 
 Jdk还包括了一些Jre之外的东西 ，就是这些东西帮我们编译Java代码的， 还有就是监控Jvm的一些工具
 
-![在这里插入图片描述](/Users/mark/typora_workspace/NoteBook/images/b76e8e384b79444aa77220a59b670749~tplv-k3u1fbpfcp-watermark.image)
+![在这里插入图片描述](https://cdn.jsdelivr.net/gh/Mark-Jackson-Github/images@master/uPic/b76e8e384b79444aa77220a59b670749~tplv-k3u1fbpfcp-watermark.image)
 
 ### 4 为什么要学习JVM
 
@@ -72,7 +70,7 @@ Jdk还包括了一些Jre之外的东西 ，就是这些东西帮我们编译Java
 
 ### 1 JVM运行时数据区
 
-什么是运行时数据区（就是我们java运行时的东西是放在那里的） ![在这里插入图片描述](/Users/mark/typora_workspace/NoteBook/images/d2fe2c617e4a49aaae3283fcd2e6c5ad~tplv-k3u1fbpfcp-watermark.image)
+什么是运行时数据区（就是我们java运行时的东西是放在那里的） ![在这里插入图片描述](https://cdn.jsdelivr.net/gh/Mark-Jackson-Github/images@master/uPic/d2fe2c617e4a49aaae3283fcd2e6c5ad~tplv-k3u1fbpfcp-watermark.image)
 
 ### 2 解析JVM运行时数据区
 
@@ -100,9 +98,13 @@ Jdk还包括了一些Jre之外的东西 ，就是这些东西帮我们编译Java
 
 **例子**：在java中最小的执行单位是线程，线程是要执行指令的，执行的指令最终操作的就是我们的电脑，就是 CPU。在CPU上面去运行，有个非常不稳定的因素，叫做调度策略，这个调度策略是时基于时间片的，也就是当前的这一纳秒是分配给那个指令的。
 
-**假如**：线程A在看直播 ![在这里插入图片描述](/Users/mark/typora_workspace/NoteBook/images/48c7d7792bf643879a8361daee0e427b~tplv-k3u1fbpfcp-watermark.image)突然，线程B来了一个视频电话，就会抢夺线程A的时间片，就会打断了线程A，线程A就会挂起 ![在这里插入图片描述](/Users/mark/typora_workspace/NoteBook/images/5b2a79aedfa5474db52c46c6e48c9358~tplv-k3u1fbpfcp-watermark.image)然后，视频电话结束，这时线程A究竟该干什么？ （线程是最小的执行单位，他不具备记忆功能，他只负责去干，那这个记忆就由：**程序计数器来记录**）
+**假如**：线程A在看直播 ![在这里插入图片描述](https://cdn.jsdelivr.net/gh/Mark-Jackson-Github/images@master/uPic/48c7d7792bf643879a8361daee0e427b~tplv-k3u1fbpfcp-watermark.image)
 
-![在这里插入图片描述](/Users/mark/typora_workspace/NoteBook/images/7ef9a52be7904fee824f06e5a553c3d4~tplv-k3u1fbpfcp-watermark.image)
+突然，线程B来了一个视频电话，就会抢夺线程A的时间片，就会打断了线程A，线程A就会挂起 ![在这里插入图片描述](https://cdn.jsdelivr.net/gh/Mark-Jackson-Github/images@master/uPic/5b2a79aedfa5474db52c46c6e48c9358~tplv-k3u1fbpfcp-watermark.image)
+
+然后，视频电话结束，这时线程A究竟该干什么？ （线程是最小的执行单位，他不具备记忆功能，他只负责去干，那这个记忆就由：**程序计数器来记录**)
+
+![在这里插入图片描述](https://cdn.jsdelivr.net/gh/Mark-Jackson-Github/images@master/uPic/7ef9a52be7904fee824f06e5a553c3d4~tplv-k3u1fbpfcp-watermark.image)
 
 #### 2.4 Java虚拟机栈（Java Virtual Machine Stacks）
 
@@ -111,7 +113,9 @@ Jdk还包括了一些Jre之外的东西 ，就是这些东西帮我们编译Java
 
 **解释**：每虚拟机栈中是有单位的，单位就是**栈帧**，一个方法一个**栈帧**。一个**栈帧**中他又要存储，局部变量，操作数栈，动态链接，出口等。
 
-![在这里插入图片描述](/Users/mark/typora_workspace/NoteBook/images/afb5cde14a674960b54640e5d13119b5~tplv-k3u1fbpfcp-watermark.image) **解析栈帧：**
+![在这里插入图片描述](https://cdn.jsdelivr.net/gh/Mark-Jackson-Github/images@master/uPic/afb5cde14a674960b54640e5d13119b5~tplv-k3u1fbpfcp-watermark.image) 
+
+**解析栈帧：**
 
 1. 局部变量表：是用来存储我们临时8个基本数据类型、对象引用地址、returnAddress类型。（returnAddress中保存的是return后要执行的字节码的指令地址。）
 2. 操作数栈：操作数栈就是用来操作的，例如代码中有个 i = 6*6，他在一开始的时候就会进行操作，读取我们的代码，进行计算后再放入局部变量表中去
@@ -137,7 +141,9 @@ Jdk还包括了一些Jre之外的东西 ，就是这些东西帮我们编译Java
 
 ### 3 Java内存结构
 
-![在这里插入图片描述](/Users/mark/typora_workspace/NoteBook/images/1e7e64860ec5405fa051ead59bc719bd~tplv-k3u1fbpfcp-watermark.image) 上面已经讲了运行时数据区，这里就差几个小组件了
+![在这里插入图片描述](https://cdn.jsdelivr.net/gh/Mark-Jackson-Github/images@master/uPic/1e7e64860ec5405fa051ead59bc719bd~tplv-k3u1fbpfcp-watermark.image) 
+
+上面已经讲了运行时数据区，这里就差几个小组件了
 
 #### 3.1 直接内存（Direct Memory）
 
@@ -382,7 +388,7 @@ public class Test {
 
 1. 该种方法是从GC Roots开始向下搜索，搜索所走过的路径为引用链。当一个对象到GC Roots没用任何引用链时，则证明此对象是不可用的，表示可以回收。
 
-![在这里插入图片描述](/Users/mark/typora_workspace/NoteBook/images/2b525da4f2d04c91ba3de5d10163d071~tplv-k3u1fbpfcp-watermark.image)
+![在这里插入图片描述](https://cdn.jsdelivr.net/gh/Mark-Jackson-Github/images@master/uPic/2b525da4f2d04c91ba3de5d10163d071~tplv-k3u1fbpfcp-watermark.image)
 
 1. 上图上图中Object1、Object2、Object3、Object4、Object5到GC Roots是可达的，表示它们是有引用的对象，是存活的对象不可以进行回收
 2. Object6、Object7、Object8虽然是互相关联的，但是它们到GC Roots是不可达的，所以他们是可以进行回收的对象。
@@ -538,7 +544,7 @@ public class Test {
 - 垃圾收集器是垃圾回收算法（引用计数法、标记清楚法、标记整理法、复制算法）的具体实现，不同垃圾收集器、不同版本的JVM所提供的垃圾收集器可能会有很在差别。
 - **我这以JDK8为准：**
 
-![在这里插入图片描述](/Users/mark/typora_workspace/NoteBook/images/1da5d2be80b14253b777e3dd8a3ebf19~tplv-k3u1fbpfcp-watermark.image)
+![在这里插入图片描述](https://cdn.jsdelivr.net/gh/Mark-Jackson-Github/images@master/uPic/1da5d2be80b14253b777e3dd8a3ebf19~tplv-k3u1fbpfcp-watermark.image)
 
 **图中展示了7种不同分代的收集器：** Serial、ParNew、Parallel Scavenge、CMS、Serial Old、Parallel Old、G1
 
@@ -813,21 +819,21 @@ G1
 
 ##### 6.3.1 IDEA在哪里设置JVM参数
 
-1、单个项目的应用 ![在这里插入图片描述](/Users/mark/typora_workspace/NoteBook/images/ad7374316e334e83aea57d1afd57edeb~tplv-k3u1fbpfcp-watermark.image)![在这里插入图片描述](/Users/mark/typora_workspace/NoteBook/images/3833fa45ecf146e2a0a02780bfc1445a~tplv-k3u1fbpfcp-watermark.image)2、全局的配置
+1、单个项目的应用 ![在这里插入图片描述](https://cdn.jsdelivr.net/gh/Mark-Jackson-Github/images@master/uPic/ad7374316e334e83aea57d1afd57edeb~tplv-k3u1fbpfcp-watermark.image)![在这里插入图片描述](https://cdn.jsdelivr.net/gh/Mark-Jackson-Github/images@master/uPic/3833fa45ecf146e2a0a02780bfc1445a~tplv-k3u1fbpfcp-watermark.image)2、全局的配置
 
 1. 找到IDEA安装目录中的bin目录
 2. 找到idea.exe.vmoptions文件
 3. 打开该文件编辑并保存。
 
-![在这里插入图片描述](/Users/mark/typora_workspace/NoteBook/images/86c65f6e308448a0af68efdfe7785e3a~tplv-k3u1fbpfcp-watermark.image)
+![在这里插入图片描述](https://cdn.jsdelivr.net/gh/Mark-Jackson-Github/images@master/uPic/86c65f6e308448a0af68efdfe7785e3a~tplv-k3u1fbpfcp-watermark.image)
 
 ##### 6.3.2 Eclipse在哪里设置JVM参数
 
 **1、配置单个项目**
 
-点击绿色图标右边的小箭头 ![在这里插入图片描述](/Users/mark/typora_workspace/NoteBook/images/aa6eb42ff1bd45f9832a92c97668b05d~tplv-k3u1fbpfcp-watermark.image) 在点击：Run Configurations ->VM arguments ![在这里插入图片描述](/Users/mark/typora_workspace/NoteBook/images/22d2ad1e254f4b5289aea8fb78cc4185~tplv-k3u1fbpfcp-watermark.image)
+点击绿色图标右边的小箭头 ![在这里插入图片描述](https://cdn.jsdelivr.net/gh/Mark-Jackson-Github/images@master/uPic/aa6eb42ff1bd45f9832a92c97668b05d~tplv-k3u1fbpfcp-watermark.image) 在点击：Run Configurations ->VM arguments ![在这里插入图片描述](https://cdn.jsdelivr.net/gh/Mark-Jackson-Github/images@master/uPic/22d2ad1e254f4b5289aea8fb78cc4185~tplv-k3u1fbpfcp-watermark.image)
 
-**2、配置全局JVM参数** 修改Eclipse的配置文件，在eclipse安装目录下的：eclipse.ini文件 ![在这里插入图片描述](/Users/mark/typora_workspace/NoteBook/images/ce63a87de8034cd29d05914b56a76fb0~tplv-k3u1fbpfcp-watermark.image)
+**2、配置全局JVM参数** 修改Eclipse的配置文件，在eclipse安装目录下的：eclipse.ini文件 ![在这里插入图片描述](https://cdn.jsdelivr.net/gh/Mark-Jackson-Github/images@master/uPic/ce63a87de8034cd29d05914b56a76fb0~tplv-k3u1fbpfcp-watermark.image)
 
 ##### 6.3.3 war(Tomcat)包在哪里设置JVM参数
 
@@ -840,7 +846,7 @@ set "JAVA_OPTS=-Xms512M -Xmx1024M ...等等等 JVM参数"
 复制代码
 ```
 
-![在这里插入图片描述](/Users/mark/typora_workspace/NoteBook/images/c6bada5c1bd14ff9a011ef7433dd1bdb~tplv-k3u1fbpfcp-watermark.image)
+![在这里插入图片描述](https://cdn.jsdelivr.net/gh/Mark-Jackson-Github/images@master/uPic/c6bada5c1bd14ff9a011ef7433dd1bdb~tplv-k3u1fbpfcp-watermark.image)
 
 **2、Linux要在tomcat 的bin 下的catalina.sh 文件里添加**
 
@@ -850,7 +856,7 @@ JAVA_OPTS="-Xms512M -Xmx1024M ...等等等 JVM参数"
 复制代码
 ```
 
-![在这里插入图片描述](/Users/mark/typora_workspace/NoteBook/images/c9da415a0d464c45b0f1625f37705e70~tplv-k3u1fbpfcp-watermark.image)
+![在这里插入图片描述](https://cdn.jsdelivr.net/gh/Mark-Jackson-Github/images@master/uPic/c9da415a0d464c45b0f1625f37705e70~tplv-k3u1fbpfcp-watermark.image)
 
 ##### 6.3.4 Jar包在哪里设置JVM参数
 
@@ -886,7 +892,7 @@ public class Test {
 复制代码
 ```
 
-我的电脑是8G的运行内存 ![在这里插入图片描述](/Users/mark/typora_workspace/NoteBook/images/0d7e9beadd574d0192db655bb61f5f08~tplv-k3u1fbpfcp-watermark.image) 
+我的电脑是8G的运行内存 ![在这里插入图片描述](https://cdn.jsdelivr.net/gh/Mark-Jackson-Github/images@master/uPic/0d7e9beadd574d0192db655bb61f5f08~tplv-k3u1fbpfcp-watermark.image) 
 
 ### 7 类加载器
 
@@ -894,7 +900,7 @@ public class Test {
 
 程序主动使用某个类时，如果该类还未被加载到内存中，则JVM会通过加载、连接、初始化3个步骤来对该类进行初始化。如果没有意外，JVM将会连续完成3个步骤，所以有时也把这个3个步骤统称为类加载或类初始化。
 
-**Jvm执行class文件** ![在这里插入图片描述](/Users/mark/typora_workspace/NoteBook/images/d9f4b0facdb9424c9d0b6daa0eba8d01~tplv-k3u1fbpfcp-watermark.image)
+**Jvm执行class文件** ![在这里插入图片描述](https://cdn.jsdelivr.net/gh/Mark-Jackson-Github/images@master/uPic/d9f4b0facdb9424c9d0b6daa0eba8d01~tplv-k3u1fbpfcp-watermark.image)
 
 ##### 1、加载
 
@@ -926,7 +932,7 @@ public class Test {
 3. 系统类加载器
 4. 自定义加载器
 
-![在这里插入图片描述](/Users/mark/typora_workspace/NoteBook/images/b1e680fa05f1464e81d2a2a94fb16597~tplv-k3u1fbpfcp-watermark.image)
+![在这里插入图片描述](https://cdn.jsdelivr.net/gh/Mark-Jackson-Github/images@master/uPic/b1e680fa05f1464e81d2a2a94fb16597~tplv-k3u1fbpfcp-watermark.image)
 
 ##### 1 根类加载器（bootstrap class loader）
 
@@ -955,7 +961,11 @@ public class Test {
 
 #### 7.3 理解双亲委派模式
 
-双亲委派机制，其工作原理的是，如果一个类加载器收到了类加载请求，它并不会自己先去加载，而是把这个请求委托给父类的加载器去执行，如果父类加载器还存在其父类加载器，则进一步向上委托，依次递归，请求最终将到达顶层的启动类加载器，如果父类加载器可以完成类加载任务，就成功返回，倘若父类加载器无法完成此加载任务，子加载器才会尝试自己去加载，这就是双亲委派模式，即每个儿子都很懒，每次有活就丢给父亲去干，直到父亲说这件事我也干不了时，儿子自己才想办法去完成。 ![在这里插入图片描述](/Users/mark/typora_workspace/NoteBook/images/d023742afb8a454d8746147675c8b315~tplv-k3u1fbpfcp-watermark.image) 双亲委派机制的优势：采用双亲委派模式的是好处是Java类随着它的类加载器一起具备了一种带有优先级的层次关系，通过这种层级关可以避免类的重复加载，当父亲已经加载了该类时，就没有必要子ClassLoader再加载一次。其次是考虑到安全因素，java核心api中定义类型不会被随意替换，假设通过网络传递一个名为java.lang.Integer的类，通过双亲委托模式传递到启动类加载器，而启动类加载器在核心Java API发现这个名字的类，发现该类已被加载，并不会重新加载网络传递的过来的java.lang.Integer，而直接返回已加载过的Integer.class，这样便可以防止核心API库被随意篡改。 
+双亲委派机制，其工作原理的是，如果一个类加载器收到了类加载请求，它并不会自己先去加载，而是把这个请求委托给父类的加载器去执行，如果父类加载器还存在其父类加载器，则进一步向上委托，依次递归，请求最终将到达顶层的启动类加载器，如果父类加载器可以完成类加载任务，就成功返回，倘若父类加载器无法完成此加载任务，子加载器才会尝试自己去加载，这就是双亲委派模式，即每个儿子都很懒，每次有活就丢给父亲去干，直到父亲说这件事我也干不了时，儿子自己才想办法去完成。
+
+ ![在这里插入图片描述](https://cdn.jsdelivr.net/gh/Mark-Jackson-Github/images@master/uPic/d023742afb8a454d8746147675c8b315~tplv-k3u1fbpfcp-watermark.image) 
+
+双亲委派机制的优势：采用双亲委派模式的是好处是Java类随着它的类加载器一起具备了一种带有优先级的层次关系，通过这种层级关可以避免类的重复加载，当父亲已经加载了该类时，就没有必要子ClassLoader再加载一次。其次是考虑到安全因素，java核心api中定义类型不会被随意替换，假设通过网络传递一个名为java.lang.Integer的类，通过双亲委托模式传递到启动类加载器，而启动类加载器在核心Java API发现这个名字的类，发现该类已被加载，并不会重新加载网络传递的过来的java.lang.Integer，而直接返回已加载过的Integer.class，这样便可以防止核心API库被随意篡改。 
 
 #### 7.4 类加载器间的关系
 
@@ -975,11 +985,17 @@ VisualVM 是一款免费的，集成了多个 JDK 命令行工具的可视化工
 
 ##### 8.2.1 打开visualVm
 
-位于 JDK 根目录的 bin 文件夹下的jvisualvm.exe **注**：我的JDK11没有，不知道为什么，我jdk8就找的到此工具 ![在这里插入图片描述](/Users/mark/typora_workspace/NoteBook/images/df93997cc2614674a67ba22cab1d51c3~tplv-k3u1fbpfcp-watermark.image)![在这里插入图片描述](/Users/mark/typora_workspace/NoteBook/images/96115da023c649b494af8d90e151eb69~tplv-k3u1fbpfcp-watermark.image)
+位于 JDK 根目录的 bin 文件夹下的jvisualvm.exe **注**：我的JDK11没有，不知道为什么，我jdk8就找的到此工具 ![在这里插入图片描述](https://cdn.jsdelivr.net/gh/Mark-Jackson-Github/images@master/uPic/df93997cc2614674a67ba22cab1d51c3~tplv-k3u1fbpfcp-watermark.image)![在这里插入图片描述](https://cdn.jsdelivr.net/gh/Mark-Jackson-Github/images@master/uPic/96115da023c649b494af8d90e151eb69~tplv-k3u1fbpfcp-watermark.image)
 
 ##### 8.2.2 本地测试项目JVM运行状态
 
-我这本地有了好几个进程，这是我IDea工具的 ![在这里插入图片描述](/Users/mark/typora_workspace/NoteBook/images/4f70752b3c1b4757896e8734bb2c170c~tplv-k3u1fbpfcp-watermark.image) 我运行一个SpringBoot项目 ![在这里插入图片描述](/Users/mark/typora_workspace/NoteBook/images/389bcb4715c44da7a19002f0acfe3a12~tplv-k3u1fbpfcp-watermark.image)此时就开始监控了 ![在这里插入图片描述](/Users/mark/typora_workspace/NoteBook/images/c861a32ab4d045b5a7531573f9dc5bb2~tplv-k3u1fbpfcp-watermark.image)
+我这本地有了好几个进程，这是我IDea工具的
+
+ ![在这里插入图片描述](https://cdn.jsdelivr.net/gh/Mark-Jackson-Github/images@master/uPic/4f70752b3c1b4757896e8734bb2c170c~tplv-k3u1fbpfcp-watermark.image) 
+
+我运行一个SpringBoot项目 ![在这里插入图片描述](https://cdn.jsdelivr.net/gh/Mark-Jackson-Github/images@master/uPic/389bcb4715c44da7a19002f0acfe3a12~tplv-k3u1fbpfcp-watermark.image)
+
+此时就开始监控了 ![在这里插入图片描述](https://cdn.jsdelivr.net/gh/Mark-Jackson-Github/images@master/uPic/c861a32ab4d045b5a7531573f9dc5bb2~tplv-k3u1fbpfcp-watermark.image)
 
 ##### 8.2.3 测试服务器项目JVM运行状态
 
@@ -991,6 +1007,6 @@ VisualVM 是一款免费的，集成了多个 JDK 命令行工具的可视化工
 
 ##### 8.3.1 启动JConsole
 
-点击jdk/bin 目录下面的jconsole.exe 即可启动,然后会自动自动搜索本机运行的所有虚拟机进程。选择其中一个进程可开始进行监控 ![在这里插入图片描述](/Users/mark/typora_workspace/NoteBook/images/8239262b1e2e4352900d050fbdd0ddab~tplv-k3u1fbpfcp-watermark.image)![在这里插入图片描述](/Users/mark/typora_workspace/NoteBook/images/12e83b2bd5534d5f81c5efbede64438b~tplv-k3u1fbpfcp-watermark.image)
+点击jdk/bin 目录下面的jconsole.exe 即可启动,然后会自动自动搜索本机运行的所有虚拟机进程。选择其中一个进程可开始进行监控 ![在这里插入图片描述](https://cdn.jsdelivr.net/gh/Mark-Jackson-Github/images@master/uPic/8239262b1e2e4352900d050fbdd0ddab~tplv-k3u1fbpfcp-watermark.image)![在这里插入图片描述](https://cdn.jsdelivr.net/gh/Mark-Jackson-Github/images@master/uPic/12e83b2bd5534d5f81c5efbede64438b~tplv-k3u1fbpfcp-watermark.image)
 
-##### 8.3.2 远程连接项目也很简单，和 visualVm基本一致，可以自己研究一下
+#### 8.3.2 远程连接项目也很简单，和 visualVm基本一致，可以自己研究一下

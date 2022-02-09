@@ -10,7 +10,7 @@
 
 “生产者-消费者”模型是一个典型的线程协作通信的例子。在这一模型中有两类角色，即若干个生产者线程和若干个消费者线程。生产者线程负责提交用户请求，消费者线程负责处理生产者提交的请求。很多情况下，生产者与消费者不能够达到一定的平衡，即有时候生产者生产的速度过快，消费之来不及消费；而有时候可能是消费者过于旺盛，生产者来不及生产。在此情况下就需要一个生产者与消费者共享的内存缓存区来平衡二者的协作。生产者与消费者之间通过共享内存缓存区进行通信，从而平衡生产者与消费者线程，并将生产者和消费者解耦。如下图所示：
 
-![1C2478F7-48B7-4ACA-A575-ABF8B71F40B9.png](/Users/mark/typora_workspace/NoteBook/images/08aa1fce00cb43fb830907d484e6911e~tplv-k3u1fbpfcp-watermark.image)
+![1C2478F7-48B7-4ACA-A575-ABF8B71F40B9.png](https://cdn.jsdelivr.net/gh/Mark-Jackson-Github/images@master/uPic/08aa1fce00cb43fb830907d484e6911e~tplv-k3u1fbpfcp-watermark.image)
 
 当队列容器中没有商品的时候，就需要让消费者处于等待状态，而当容器满了之后就需要生产者处于等待状态。而消费者每消费一个商品，又会通知正在等待的生产者可以进行生产了；当生产则生产一个商品，也会通知正在等待的消费者可以消费了。
 
@@ -596,7 +596,7 @@ public class ConditionObject implements Condition, java.io.Serializable {
 
 ConditionObject的结构比较简单，它内部维护了一个Node类型**等待队列**（这里注意与AQS中的同步队列区分）。其中firstWaiter指向队列的头结点，而lastWaiter指向队列的尾结点。关于Node节点，在ReentrantLock那篇文章中已经详细介绍过了，它封装的是一个线程的节点，这里也不再赘述。在线程中调用了Condition的await方法后，线程就会被封装成一个Node节点，并将Node的waitStatus设置成CONDITION状态，然后插入到这个Condition的等待队列中。等到收到singal或者被中断、超时就会被从等待队列中移除。其结构示意图如下：
 
-![condition_waitset.png](/Users/mark/typora_workspace/NoteBook/images/cfbe952c5f604c38bb6051b37b345c06~tplv-k3u1fbpfcp-watermark.image)
+![condition_waitset.png](https://cdn.jsdelivr.net/gh/Mark-Jackson-Github/images@master/uPic/cfbe952c5f604c38bb6051b37b345c06~tplv-k3u1fbpfcp-watermark.image)
 
 接下来我们从源码的角度来分析Condition的实现。
 
@@ -794,6 +794,6 @@ transferForSignal实际上就是做了一个队列的转移，将node从等待�
 
 通过对Condition的await与signal方法的分析，可以看得出来这两个方法并非独立存在，而是一个相互配合的关系。await方法会将执行的线程封装成Node加入到等待队列，然后开启一个循环检测这个node看是否被加入到了同步队列，如果被加入到同步队列，那么调用acquireQueued继续竞争锁，如果没有被加入同步队列，则会一直等待。而signal方法则是将等待队列中的队首元素移动到同步队列，这样就出发了await方法的循环终结，继而能够执行acquireQueued方法。其流程如下图所示：
 
-![await_singal.png](/Users/mark/typora_workspace/NoteBook/images/23db71e929f24c74b85c5ce0a070954d~tplv-k3u1fbpfcp-watermark.image)
+![await_singal.png](https://cdn.jsdelivr.net/gh/Mark-Jackson-Github/images@master/uPic/23db71e929f24c74b85c5ce0a070954d~tplv-k3u1fbpfcp-watermark.image)
 
 关于Java线程的等待与唤醒机制，到这里就全部结束了，通过本篇文章的学习，更加深入的了解了线程等待与唤醒的原理，其实可以看得出来无论synchronized监视器锁的等待与唤醒还是Lock锁的等待与唤醒都有着类似的原理，只不过synchronized是虚拟机底层实现，而ReentrantLock是基于Java层的实现。
